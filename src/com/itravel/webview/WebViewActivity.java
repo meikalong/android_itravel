@@ -1,4 +1,6 @@
-package com.itravel;
+package com.itravel.webview;
+
+import com.itravel.main.MainActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,18 +10,16 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class SecondActivity extends Activity {
+public class WebViewActivity extends Activity {
 
 	private WebView webView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_second);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
-		webView = (WebView) findViewById(R.id.webView);
 		Intent intent = getIntent();
 		webView.loadUrl(intent.getStringExtra("url"));
 
