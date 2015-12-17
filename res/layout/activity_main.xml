@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/frameMenu"
         android:layout_alignParentTop="true" >
+
     </FrameLayout>
 
     <FrameLayout
@@ -39,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
                     android:contentDescription="@string/skin_tabbar_icon_index"
-                    android:src="@drawable/skin_tabbar_icon_auth_select" />
+                    android:src="@drawable/skin_tabbar_icon_index_select" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -64,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
                     android:contentDescription="@string/skin_tabbar_icon_sort"
-                    android:src="@drawable/skin_tabbar_icon_at_select" />
+                    android:src="@drawable/skin_tabbar_icon_sort_select" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
                     android:contentDescription="@string/skin_tabbar_icon_find"
-                    android:src="@drawable/skin_tabbar_icon_space_select" />
+                    android:src="@drawable/skin_tabbar_icon_find_select" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -114,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
                     android:contentDescription="@string/skin_tabbar_icon_mine"
-                    android:src="@drawable/skin_tabbar_icon_more_select" />
+                    android:src="@drawable/skin_tabbar_icon_mine_select" />
 
                 <TextView
                     android:layout_width="wrap_content"
