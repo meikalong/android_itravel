@@ -1,10 +1,12 @@
 package com.itravel;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
@@ -17,6 +19,26 @@ public class MainActivity extends Activity {
 
 		webView = (WebView) findViewById(R.id.webView);
 		webView.loadUrl("http://www.baidu.com");
+
+		// webView.setWebChromeClient(new WebChromeClient() {
+		// @Override
+		// public void onReceivedTitle(WebView view, String title) {
+		// super.onReceivedTitle(view, title);
+		// }
+		// });
+
+		webView.setWebViewClient(new WebViewClient() {
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				Intent intent = new Intent(MainActivity.this,
+						SecondActivity.class);
+				intent.putExtra("url", url);
+				startActivity(intent);
+				return true;
+				// view.loadUrl(url);
+				// return super.shouldOverrideUrlLoading(view, url);
+			}
+		});
 	}
 
 	@Override
