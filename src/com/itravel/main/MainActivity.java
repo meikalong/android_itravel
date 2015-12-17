@@ -1,13 +1,5 @@
 package com.itravel.main;
 
-import com.itravel.R;
-import com.itravel.R.id;
-import com.itravel.R.layout;
-import com.itravel.fragments.FragmentFind;
-import com.itravel.fragments.FragmentIndex;
-import com.itravel.fragments.FragmentMine;
-import com.itravel.fragments.FragmentSort;
-
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -16,6 +8,12 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+
+import com.itravel.R;
+import com.itravel.fragments.FragmentFind;
+import com.itravel.fragments.FragmentIndex;
+import com.itravel.fragments.FragmentMine;
+import com.itravel.fragments.FragmentSort;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
 	// 定义Fragment页面
@@ -31,9 +29,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
 		setContentView(R.layout.activity_main);
+		super.onCreate(savedInstanceState);
 
 		initView();
 
