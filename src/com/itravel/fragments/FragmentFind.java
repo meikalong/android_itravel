@@ -31,5 +31,6 @@ public class FragmentFind extends Fragment {
 				return super.shouldOverrideUrlLoading(view, url);
 			}
 		});
+		webView.getSettings().setJavaScriptEnabled(true);
 	}
 }

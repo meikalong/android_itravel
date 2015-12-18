@@ -31,5 +31,6 @@ public class FragmentMine extends Fragment {
 				return super.shouldOverrideUrlLoading(view, url);
 			}
 		});
+		webView.getSettings().setJavaScriptEnabled(true);
 	}
 }
