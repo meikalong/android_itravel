@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@mixin transform2D($trans2D) {
+	transform: $trans;
+	-ms-transform: $trans;		/* IE 9 */
+	-webkit-transform: $trans;	/* Safari and Chrome */
+	-o-transform: $trans;		/* Opera */
+	-moz-transform: $trans;		/* Firefox */
+}
+// 不支持角度
+@mixin linearGradients($from, $to, $beginColor, $endColor) {
+	background: -webkit-linear-gradient($from, $beginColor, $endColor); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient($to, $beginColor, $endColor); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient($to, $beginColor, $endColor); /* Firefox 3.6 - 15 */
+	background: linear-gradient(to $to, $beginColor, $endColor); /* 标准的语法 */
+}

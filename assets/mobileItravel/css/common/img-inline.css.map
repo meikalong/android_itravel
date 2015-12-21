@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGC,aAAI,GACH,WAAW,EAAE,GAAG",
+"sources": ["../../sass/common/img-inline.scss"],
+"names": [],
+"file": "img-inline.css"
+}

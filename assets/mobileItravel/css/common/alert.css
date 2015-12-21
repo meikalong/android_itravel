@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.alert:before, .alert:after { display: table; content: ""; clear: both; }
+
+/******** 弹出提示框 **********/
+.alert { width: 100%; padding: 15px; border-radius: 4px; border: 1px solid transparent; position: relative; }
+
+.alert-close { position: absolute; top: 3px; right: 6px; cursor: pointer; }
+.alert-close:hover { text-shadow: 0px 0px 1px #a94442; }
+
+.alert-red { color: #a94442; background-color: #f2dede; border-color: #ebccd1; }
+
+.alert-green { color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6; }
+
+.alert-blue { color: #31708f; background-color: #d9edf7; border-color: #bce8f1; }
+
+.alert-yellow { color: #8a6d3b; background-color: #fcf8e3; border-color: #faebcc; }

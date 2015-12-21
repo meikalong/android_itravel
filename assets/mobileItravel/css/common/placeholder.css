@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/**********输入框内部placeholder**********/
+*:-moz-placeholder { color: #999; opacity: 1; }
+*::-moz-placeholder { color: #999; opacity: 1; }
+*:-ms-input-placeholder { color: #999; }
+*::-webkit-input-placeholder { color: #999; }

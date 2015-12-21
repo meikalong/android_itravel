@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import "./import/_base.scss","./import/_variable.scss","./import/_form.scss";
+
+/*******form-表单********/
+
+.form{
+	.form-control{
+		@extend %base-form-control;
+	}
+}
+.form-horizontal{
+	.form-control{
+		@extend %base-form-control;
+	}
+	.control-label{
+		padding-top: 7px;
+	    @media (min-width: $screen-min-width) {
+	    	margin-bottom: 0;
+	    }
+	    text-align: right;
+	}
+}
+
+
+.form-group{
+	margin-bottom: 5px;
+	@extend %beforeAndAfter;
+	.help{
+		color: #666666;
+	}
+}
+
+.radio,
+.checkbox {
+  position: relative;
+  display: block;
+}
+
+.radio,.checkbox-inline,.radio-inline,.checkbox{
+	margin-top: 7px;
+	label{
+  	min-height: 20px;
+	padding-left: 20px;
+	margin-bottom: 0;
+	font-weight: normal;
+	cursor: pointer;
+  }
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-top: 4px;
+  margin-left: -20px;
+}
+
+/***********表单状态**************/
+
+.has-success {
+	.form-control{
+	  border-color: #3c763d;
+	  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	&:focus{
+	  	border-color: #2b542c;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+	  }
+	}
+}
+
+.has-success-span{
+	color: #3c763d;
+}
+
+.has-error {
+	.form-control{
+	  border-color: #a94442;
+	  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	&:focus{
+	  	border-color: #843534;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+	  }
+	}
+}
+
+.has-error-span{
+	color: #a94442;
+}
+
+.has-feedback{
+	.form-control {
+  		padding-right: 30px;
+	}
+	.form-control-feedback{
+		top: 9px;
+	}
+}
+
+.form-control-feedback {
+  position: absolute;
+  right: 15px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/***********表单提示信息**************/
+.help-inline{
+	padding-top: 7px;
+	span{
+		margin-left: -25px;
+		color: red;
+		font-size: 13px;
+		font-weight: 600;
+	}
+	font{
+		font-size: 17px;
+	}
+}

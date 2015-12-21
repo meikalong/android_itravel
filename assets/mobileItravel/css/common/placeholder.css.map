@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;AAKC,kBAAkB,GAChB,KAAK,EAAE,IAAI,EACX,OAAO,EAAE,CAAC;AAEZ,mBAAmB,GACjB,KAAK,EAAE,IAAI,EACX,OAAO,EAAE,CAAC;AAEZ,uBAAwB,GACtB,KAAK,EAAE,IAAI;AAEb,4BAA6B,GAC3B,KAAK,EAAE,IAAI",
+"sources": ["../../sass/common/placeholder.scss"],
+"names": [],
+"file": "placeholder.css"
+}

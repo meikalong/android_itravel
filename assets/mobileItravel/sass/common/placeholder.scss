@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/**********输入框内部placeholder**********/
+
+* {
+	&:-moz-placeholder{//Mozilla Firefox 4-18使用伪类
+	  color: #999;
+	  opacity: 1;
+	}
+	&::-moz-placeholder{//Mozilla Firefox 19+ 使用伪元素
+	  color: #999;
+	  opacity: 1;
+	}
+	&:-ms-input-placeholder {//IE10+使用伪类
+	  color: #999;
+	}
+	&::-webkit-input-placeholder {//WebKit和Blink（Safari,Google Chrome, Opera15+）使用伪元素
+	  color: #999;
+	}
+}

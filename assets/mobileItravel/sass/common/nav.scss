@@ -1,0 +1,138 @@
+@charset "UTF-8";
+@import "./import/_base.scss";
+
+/**********导航**********/
+%display {
+	.display {
+		a {
+			color: #666666;
+
+			&:hover {
+				background-color: transparent;
+				text-decoration: none;
+				border-color: transparent transparent transparent;
+				cursor: not-allowed;
+			}
+		}
+	}
+}
+@mixin li($border-radius:4px 4px 4px 4px) {
+	li {
+		margin-bottom: -1px;
+		float: left;
+
+		a {
+			border-radius: $border-radius;
+			margin-right: 2px;
+		}
+	}
+}
+@mixin navbar-nav() {
+	@include li();
+
+	.active {
+		a {
+			color: #333333;
+			border-radius: 4px 4px 4px 4px;
+			border: 1px solid #DDDDDD;
+			background-color: #428BCA;
+
+			&:hover {
+				background-color: #428BCA;
+				cursor: default;
+			}
+		}
+	}
+}
+@mixin nav-tabs() {
+	@include li(4px 4px 0 0);
+	border-bottom: 1px solid #DDDDDD;
+
+	.active {
+		a {
+			color: #333333;
+			background-color: white;
+			border-radius: 4px 4px 0 0;
+			border: 1px solid #DDDDDD;
+			border-bottom-color: white;
+
+			&:hover {
+				background-color: white;
+				text-decoration: none;
+				border-color: #DDDDDD #DDDDDD white #DDDDDD;
+				cursor: default;
+			}
+		}
+	}
+	a {
+		&:hover {
+			border-bottom: 1px solid #DDDDDD;
+		}
+	}
+}
+.nav {
+	@extend %beforeAndAfter;
+	display: block;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+
+	li {
+		display: block;
+		position: relative;
+
+		a {
+			position: relative;
+			display: block;
+			padding: 10px 10px;
+			text-decoration: none;
+			line-height: 1.42857143;
+			border: 1px solid transparent;
+
+			&:hover {
+				text-decoration: none;
+				background-color: #eee;
+			}
+		}
+	}
+	@extend %display;
+}
+.nav-tabs {
+	@include nav-tabs();
+}
+.navbar-nav {
+	@include navbar-nav();
+}
+.nav-tabs-cell {
+	@include li(0px 0px 0px 0px);
+
+	li.display a{
+		&:hover{
+			color: #636363;
+		}
+	}
+
+	.display{
+		font-weight: normal;
+	}
+
+	li a {
+		color: #636363;
+		border: 0px;
+
+		&:hover {
+			background-color: transparent;
+			color: #9C79D4;
+			border-bottom: 2px solid #9C79D4;
+		}
+	}
+
+	.active a {
+		color: #9C79D4;
+		border-bottom: 2px solid #9C79D4;
+	}
+}
+
+.nav-weight{
+	font-weight: 600;
+}

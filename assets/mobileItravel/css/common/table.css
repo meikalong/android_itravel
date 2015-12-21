@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*******table表格********/
+.table { width: 100%; }
+.table tr { height: 37px; }
+.table td, .table th { padding: 8px; text-wrap: none; }
+
+.table-border td, .table-border th { border: 1px solid #DDDDDD; text-align: left; }
+
+.table-hover tr:hover td { background-color: #F5F5F5; }
+
+.table-striped tbody tr:nth-child(odd) { background-color: #EEF0F4; }
+
+.table-condensed tr { height: 31px; }
+.table-condensed td, .table-condensed th { padding: 5px; }
+
+.table-responsive { clear: right; width: auto; overflow-x: auto; }
+.table-responsive .table { white-space: nowrap; }

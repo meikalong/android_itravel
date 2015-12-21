@@ -1,0 +1,11 @@
+.line-right { position: relative; }
+.line-right:before { position: absolute; content: ""; top: -1px; height: 100%; width: 1px; right: 0; -webkit-transform: scaleX(0.5); border-right: 1px solid #ccc; }
+
+.line-left { position: relative; }
+.line-left:before { position: absolute; content: ""; top: -1px; height: 100%; width: 1px; left: 0; -webkit-transform: scaleX(0.5); border-left: 1px solid #ccc; }
+
+.line-top { position: relative; }
+.line-top:before { position: absolute; content: ""; height: 1px; width: 100%; left: 0px; top: -1px; -webkit-transform: scaleY(0.5); border-top: 1px solid #ccc; }
+
+.line-bottom { position: relative; }
+.line-bottom:before { position: absolute; content: ""; height: 1px; width: 100%; left: 0px; bottom: -1px; -webkit-transform: scaleY(0.5); border-bottom: 1px solid #ccc; }

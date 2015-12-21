@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+@mixin lan($width:50%,$float:none){
+	@media (min-width: $screen-min-width) {
+		width: $width;
+		float: $float;
+	}
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "./import/_base.scss","./import/_variable.scss";
+
+/*******container容器********/
+
+.container{
+	@media all and (min-width: $screen-min-width) {
+		margin: 0px auto 0px auto;
+		width: 750px;
+	}
+	@media all and (min-width: $screen-mid-width) {
+		margin: 0px auto 0px auto;
+		width: 970px;
+	}
+	@media all and (min-width: $screen-max-width) {
+		margin: 0px auto 0px auto;
+		width: 1170px;
+	}
+	&:before,&:after{
+		@extend %beforeAndAfter;
+	}
+}
