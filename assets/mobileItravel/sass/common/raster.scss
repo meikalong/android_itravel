@@ -12,6 +12,10 @@
 
 }
 
+.width{
+	width: 100%;
+}
+
 @include commonCreate_col($col-number);
 
 // @media (min-width: $screen-min-width) {

@@ -28,5 +28,4 @@ table { border-spacing: 0px; border-collapse: collapse; }
 
 label { display: inline-block; max-width: 100%; margin-bottom: 5px; font-weight: 700; }
 
-a { color: #337ab7; text-decoration: none; }
-a:hover { color: blue; }
+a { color: #525252; text-decoration: none; }

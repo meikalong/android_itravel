@@ -6,6 +6,8 @@
 /*******栅格********/
 .row { width: 100%; min-height: 1px; }
 
+.width { width: 100%; }
+
 .col-1 { float: left; display: block; width: 8.33333%; }
 
 .col-2 { float: left; display: block; width: 16.66667%; }

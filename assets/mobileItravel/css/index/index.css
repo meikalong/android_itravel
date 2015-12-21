@@ -2,8 +2,6 @@
 
 .top-img, .top-img img, .column, .subcolumn img, .guanggao, .guanggao img { width: 100%; }
 
-.width { width: 100%; }
-
 .subcolumn div { padding: 10px 3%; text-align: center; color: #808080; font-size: 12px; font-weight: bolder; }
 @media (min-width: 400px) { .subcolumn div { font-size: 100%; } }
 @media (min-width: 600px) { .subcolumn div { font-size: 140%; } }

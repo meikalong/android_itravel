@@ -1,0 +1,46 @@
+@charset "UTF-8";
+$fam: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+body {
+	background-color: #EEEDED;
+	font-family: $fam;
+}
+.title {
+	text-align: center;
+	font-size: 5vw;
+	height: 80px;
+	line-height: 70px;
+	color: #5F5F5F;
+	span{
+		font-size: 6vw;
+		font-weight: bolder;
+		padding: 0px 1%;
+	}
+}
+.column {
+	img {
+		border-radius: 5px;
+	}
+	position: relative;
+	padding: 0px 2%;
+	div{
+		color: #fff;
+	}
+	font-size: 4vw;
+}
+.product-msg, .product-position {
+	position: absolute;
+	bottom: 10%;
+}
+.product-msg {
+	left: 7%;
+	.span,.span-line{
+		font-size: 5vw;
+	}
+	.span-line{
+		opacity: 0.5;
+	}
+}
+.product-position {
+	right: 10%;
+}
