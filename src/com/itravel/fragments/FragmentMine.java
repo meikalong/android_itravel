@@ -23,7 +23,7 @@ public class FragmentMine extends Fragment {
 	public void onStart() {
 		super.onStart();
 		webView = (WebView) getView().findViewById(R.id.webView);
-		webView.loadUrl("file:///android_asset/mine/index.html");
+		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/mine/index.html");
 		webView.setWebViewClient(new WebViewClient() {
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url) {
