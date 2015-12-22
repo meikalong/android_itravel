@@ -13,4 +13,5 @@
 .hidden { display: none; }
 
 a.close { font-size: 18px; font-weight: 700; line-height: 1; color: #B8B8B8; text-shadow: 0 1px 0 #fff; cursor: pointer; position: absolute; right: 15px; }
-a.close:hover { color: #000; }
+
+/*# sourceMappingURL=modal.css.map */

@@ -1,6 +1,5 @@
 /*******lan-base********/
 .lan-base { border: 1px solid #ccc; margin-top: 20px; cursor: pointer; border-radius: 2px; -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.175); }
-.lan-base:hover { background-color: #ECECEC; }
 
 @media (min-width: 768px) { .lan-base-left { width: 48%; float: left; } }
 
@@ -8,3 +7,5 @@
 
 .lan-content { margin-left: 30px; }
 .lan-content .lan-small-content { font-size: 18px; }
+
+/*# sourceMappingURL=lan-base.css.map */

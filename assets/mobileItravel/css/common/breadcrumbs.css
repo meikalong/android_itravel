@@ -4,3 +4,5 @@
 .breadcrumb li { display: inline-block; }
 .breadcrumb li + li:before { padding: 0 5px; color: #ccc; content: "/"; }
 .breadcrumb .active { color: #999; }
+
+/*# sourceMappingURL=breadcrumbs.css.map */

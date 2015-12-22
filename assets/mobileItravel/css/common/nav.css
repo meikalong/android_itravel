@@ -3,31 +3,26 @@
 
 /**********导航**********/
 .nav .display a { color: #666666; }
-.nav .display a:hover { background-color: transparent; text-decoration: none; border-color: transparent transparent transparent; cursor: not-allowed; }
 
 .nav { display: block; padding-left: 0; margin-bottom: 0; list-style: none; }
 .nav li { display: block; position: relative; }
 .nav li a { position: relative; display: block; padding: 10px 10px; text-decoration: none; line-height: 1.42857143; border: 1px solid transparent; }
-.nav li a:hover { text-decoration: none; background-color: #eee; }
 
 .nav-tabs { border-bottom: 1px solid #DDDDDD; }
 .nav-tabs li { margin-bottom: -1px; float: left; }
 .nav-tabs li a { border-radius: 4px 4px 0 0; margin-right: 2px; }
 .nav-tabs .active a { color: #333333; background-color: white; border-radius: 4px 4px 0 0; border: 1px solid #DDDDDD; border-bottom-color: white; }
-.nav-tabs .active a:hover { background-color: white; text-decoration: none; border-color: #DDDDDD #DDDDDD white #DDDDDD; cursor: default; }
-.nav-tabs a:hover { border-bottom: 1px solid #DDDDDD; }
 
 .navbar-nav li { margin-bottom: -1px; float: left; }
 .navbar-nav li a { border-radius: 4px 4px 4px 4px; margin-right: 2px; }
 .navbar-nav .active a { color: #333333; border-radius: 4px 4px 4px 4px; border: 1px solid #DDDDDD; background-color: #428BCA; }
-.navbar-nav .active a:hover { background-color: #428BCA; cursor: default; }
 
 .nav-tabs-cell li { margin-bottom: -1px; float: left; }
 .nav-tabs-cell li a { border-radius: 0px 0px 0px 0px; margin-right: 2px; }
-.nav-tabs-cell li.display a:hover { color: #636363; }
 .nav-tabs-cell .display { font-weight: normal; }
 .nav-tabs-cell li a { color: #636363; border: 0px; }
-.nav-tabs-cell li a:hover { background-color: transparent; color: #9C79D4; border-bottom: 2px solid #9C79D4; }
 .nav-tabs-cell .active a { color: #9C79D4; border-bottom: 2px solid #9C79D4; }
 
 .nav-weight { font-weight: 600; }
+
+/*# sourceMappingURL=nav.css.map */

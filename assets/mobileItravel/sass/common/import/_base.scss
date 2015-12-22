@@ -1,9 +1,0 @@
-@charset "UTF-8";
-
-%beforeAndAfter{
-	&:before,&:after{
-	 	display: table;
-	  	content: "";
-	 	clear: both;
-	}
-}
