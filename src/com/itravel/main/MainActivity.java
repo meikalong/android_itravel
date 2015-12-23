@@ -1,11 +1,11 @@
 package com.itravel.main;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -17,10 +17,11 @@ import com.itravel.fragments.FragmentSort;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
 	// 定义Fragment页面
-	private FragmentIndex fragmentIndex;
-	private FragmentSort fragmentSort;
-	private FragmentFind fragmentFind;
-	private FragmentMine fragmentMine;
+	private FragmentIndex fragmentIndex = new FragmentIndex();
+	private FragmentSort fragmentSort = new FragmentSort();
+	private FragmentFind fragmentFind = new FragmentFind();
+	private FragmentMine fragmentMine = new FragmentMine();
+	private Fragment currentFragment = null;
 	// 定义布局对象
 	private FrameLayout indexFl, sortFl, findFl, mineFl;
 
@@ -29,7 +30,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
 		setContentView(R.layout.activity_main);
 		super.onCreate(savedInstanceState);
 
@@ -37,8 +37,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
 		initData();
 
-		// 初始化默认为选中点击了“动态”按钮
-		clickAtBtn();
+		clickIndexBtn();
 	}
 
 	/**
@@ -77,131 +76,98 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		// 点击首页按钮
 		case R.id.layout_index:
-			clickAtBtn();
+			clickIndexBtn();
 			break;
-		// 点击分类按钮
 		case R.id.layout_sort:
-			clickAuthBtn();
+			clickSortBtn();
 			break;
-		// 点击发现按钮
 		case R.id.layout_find:
-			clickSpaceBtn();
+			clickFindBtn();
 			break;
-		// 点击我的按钮
 		case R.id.layout_mine:
-			clickMoreBtn();
+			clickMineBtn();
 			break;
 		}
 	}
 
 	/**
-	 * 点击了“动态”按钮
+	 * 点击了“主页”按钮
 	 */
-	private void clickAtBtn() {
-		// 实例化Fragment页面
-		fragmentIndex = new FragmentIndex();
-		// 得到Fragment事务管理器
-		FragmentTransaction fragmentTransaction = this
-				.getSupportFragmentManager().beginTransaction();
-		// 替换当前的页面
-		fragmentTransaction.replace(R.id.frame_content, fragmentIndex);
-		// 事务管理提交
-		fragmentTransaction.commit();
-		// 改变选中状态
+	private void clickIndexBtn() {
+		switchFragment(fragmentIndex);
+
+		changeSelected();
 		indexFl.setSelected(true);
 		indexIv.setSelected(true);
-
-		sortFl.setSelected(false);
-		sortIv.setSelected(false);
-
-		findFl.setSelected(false);
-		findIv.setSelected(false);
-
-		mineFl.setSelected(false);
-		mineIv.setSelected(false);
 	}
 
 	/**
-	 * 点击了“与我相关”按钮
+	 * 点击了“分类”按钮
 	 */
-	private void clickAuthBtn() {
-		// 实例化Fragment页面
-		fragmentSort = new FragmentSort();
-		// 得到Fragment事务管理器
-		FragmentTransaction fragmentTransaction = this
-				.getSupportFragmentManager().beginTransaction();
-		// 替换当前的页面
-		fragmentTransaction.replace(R.id.frame_content, fragmentSort);
-		// 事务管理提交
-		fragmentTransaction.commit();
+	private void clickSortBtn() {
+		switchFragment(fragmentSort);
 
-		indexFl.setSelected(false);
-		indexIv.setSelected(false);
-
+		changeSelected();
 		sortFl.setSelected(true);
 		sortIv.setSelected(true);
 
-		findFl.setSelected(false);
-		findIv.setSelected(false);
-
-		mineFl.setSelected(false);
-		mineIv.setSelected(false);
 	}
 
 	/**
-	 * 点击了“我的空间”按钮
+	 * 点击了“发现”按钮
 	 */
-	private void clickSpaceBtn() {
-		// 实例化Fragment页面
-		fragmentFind = new FragmentFind();
-		// 得到Fragment事务管理器
-		FragmentTransaction fragmentTransaction = this
-				.getSupportFragmentManager().beginTransaction();
-		// 替换当前的页面
-		fragmentTransaction.replace(R.id.frame_content, fragmentFind);
-		// 事务管理提交
-		fragmentTransaction.commit();
+	private void clickFindBtn() {
+		switchFragment(fragmentFind);
 
-		indexFl.setSelected(false);
-		indexIv.setSelected(false);
-
-		sortFl.setSelected(false);
-		sortIv.setSelected(false);
-
+		changeSelected();
 		findFl.setSelected(true);
 		findIv.setSelected(true);
-
-		mineFl.setSelected(false);
-		mineIv.setSelected(false);
 	}
 
 	/**
-	 * 点击了“更多”按钮
+	 * 点击了“我的”按钮
 	 */
-	private void clickMoreBtn() {
-		// 实例化Fragment页面
-		fragmentMine = new FragmentMine();
-		// 得到Fragment事务管理器
-		FragmentTransaction fragmentTransaction = this
-				.getSupportFragmentManager().beginTransaction();
-		// 替换当前的页面
-		fragmentTransaction.replace(R.id.frame_content, fragmentMine);
-		// 事务管理提交
-		fragmentTransaction.commit();
+	private void clickMineBtn() {
+		switchFragment(fragmentMine);
 
-		indexFl.setSelected(false);
-		indexIv.setSelected(false);
-
-		sortFl.setSelected(false);
-		sortIv.setSelected(false);
-
-		findFl.setSelected(false);
-		findIv.setSelected(false);
-
+		changeSelected();
 		mineFl.setSelected(true);
 		mineIv.setSelected(true);
 	}
 
+	private void changeSelected() {
+		indexFl.setSelected(false);
+		indexIv.setSelected(false);
+
+		sortFl.setSelected(false);
+		sortIv.setSelected(false);
+
+		findFl.setSelected(false);
+		findIv.setSelected(false);
+
+		mineFl.setSelected(false);
+		mineIv.setSelected(false);
+	}
+
+	private void switchFragment(android.support.v4.app.Fragment to) {
+		if (currentFragment == to) {
+			return;
+		}
+		// 得到Fragment事务管理器
+		FragmentTransaction fragmentTransaction = this
+				.getSupportFragmentManager().beginTransaction();
+		// 替换当前的页面
+		if (currentFragment != null) {
+			fragmentTransaction.hide(currentFragment);
+		}
+		if (to.isAdded()) {
+			fragmentTransaction.show(to);
+		} else {
+			fragmentTransaction.add(R.id.frame_content, to);
+		}
+		// 事务管理提交
+		fragmentTransaction.commit();
+		currentFragment = to;
+	}
 }

@@ -28,6 +28,9 @@ table { border-spacing: 0px; border-collapse: collapse; }
 
 label { display: inline-block; max-width: 100%; margin-bottom: 5px; font-weight: 700; }
 
-a { color: #525252; text-decoration: none; }
+/*** a标签 ***/
+a { color: #525252; text-decoration: none; -webkit-tap-highlight-color: rgba(152, 152, 152, 0.5); }
+
+button, input, .highlight-none { -webkit-tap-highlight-color: rgba(255, 0, 0, 0); }
 
 /*# sourceMappingURL=tag.css.map */

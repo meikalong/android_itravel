@@ -32,4 +32,8 @@ body { background-color: #EEEDED; }
 @media (min-width: 450px) { .title { font-size: 25px; } }
 @media (min-width: 500px) { .title { font-size: 28px; } }
 
+.product-msg, .product-position { line-height: 1.7; }
+
+a { display: block; border-radius: 5px; }
+
 /*# sourceMappingURL=index.css.map */

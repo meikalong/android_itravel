@@ -4,6 +4,6 @@
 
 *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-body { font-size: 14px; font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif; line-height: 1.42857143; background-color: white; min-width: 300px; max-width: 600px; }
+body { font-size: 14px; font-family: "Microsoft Yahei", 微软雅黑, "Helvetica Neue", Arial, sans-serif; line-height: 1.42857143; background-color: white; min-width: 300px; max-width: 600px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white" >
 
     <FrameLayout
         android:id="@+id/frame_content"
@@ -10,13 +10,12 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/frameMenu"
         android:layout_alignParentTop="true" >
-
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/frameMenu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true" >
 
         <LinearLayout
@@ -31,7 +30,7 @@
             <FrameLayout
                 android:id="@+id/layout_index"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1" >
 
                 <ImageView
@@ -39,16 +38,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
-                    android:contentDescription="@string/skin_tabbar_icon_index"
+                    android:contentDescription="@string/icon_home_index"
                     android:src="@drawable/skin_tabbar_icon_index_select" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:text="@string/skin_tabbar_icon_index"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
             </FrameLayout>
 
             <!-- 分类 -->
@@ -64,16 +55,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
-                    android:contentDescription="@string/skin_tabbar_icon_sort"
+                    android:contentDescription="@string/icon_home_sort"
                     android:src="@drawable/skin_tabbar_icon_sort_select" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:text="@string/skin_tabbar_icon_sort"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
             </FrameLayout>
 
             <!-- 发现 -->
@@ -89,16 +72,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
-                    android:contentDescription="@string/skin_tabbar_icon_find"
+                    android:contentDescription="@string/icon_home_find"
                     android:src="@drawable/skin_tabbar_icon_find_select" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:text="@string/skin_tabbar_icon_find"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
             </FrameLayout>
 
             <!-- 我的 -->
@@ -114,24 +89,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
-                    android:contentDescription="@string/skin_tabbar_icon_mine"
+                    android:contentDescription="@string/icon_home_mine"
                     android:src="@drawable/skin_tabbar_icon_mine_select" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:text="@string/skin_tabbar_icon_mine"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
             </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@android:color/black" >
+            android:background="#ccc" >
         </LinearLayout>
+
     </FrameLayout>
 
 </RelativeLayout>

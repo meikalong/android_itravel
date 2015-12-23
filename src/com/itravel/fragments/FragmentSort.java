@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.itravel.R;
+import com.itravel.webview.MyWebViewClient;
 
 public class FragmentSort extends Fragment {
 	private WebView webView;
@@ -23,14 +23,8 @@ public class FragmentSort extends Fragment {
 	public void onStart() {
 		super.onStart();
 		webView = (WebView) getView().findViewById(R.id.webView);
-		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/column/index.html");
-		webView.setWebViewClient(new WebViewClient() {
-			@Override
-			public boolean shouldOverrideUrlLoading(WebView view, String url) {
-				view.loadUrl(url);
-				return super.shouldOverrideUrlLoading(view, url);
-			}
-		});
+		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/sort/index.html");
+		webView.setWebViewClient(new MyWebViewClient(getActivity()));
 		webView.getSettings().setJavaScriptEnabled(true);
 	}
 }

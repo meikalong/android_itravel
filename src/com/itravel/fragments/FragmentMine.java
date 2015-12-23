@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.itravel.R;
+import com.itravel.webview.MyWebViewClient;
 
 public class FragmentMine extends Fragment {
 	private WebView webView;
@@ -24,13 +24,7 @@ public class FragmentMine extends Fragment {
 		super.onStart();
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/mine/index.html");
-		webView.setWebViewClient(new WebViewClient() {
-			@Override
-			public boolean shouldOverrideUrlLoading(WebView view, String url) {
-				view.loadUrl(url);
-				return super.shouldOverrideUrlLoading(view, url);
-			}
-		});
+		webView.setWebViewClient(new MyWebViewClient(getActivity()));
 		webView.getSettings().setJavaScriptEnabled(true);
 	}
 }

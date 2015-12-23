@@ -2,4 +2,6 @@
 <resources> 
 
 <color name="skin_tabbar_bg">#FCF8FC</color>
+<color name="white">#fff</color>
+<color name="ccc">#ccc</color>
 </resources>
