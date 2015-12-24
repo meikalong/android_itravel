@@ -15,6 +15,8 @@ import com.itravel.webview.MyWebViewClient;
 public class FragmentIndex extends Fragment {
 
 	private WebView webView;
+	// 防止因为生命周期导致页面重复加载
+	private boolean flag = false;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,6 +28,9 @@ public class FragmentIndex extends Fragment {
 	@Override
 	public void onStart() {
 		super.onStart();
+		if (flag) {
+			return;
+		}
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/index/index.html");
 		webView.setWebViewClient(new MyWebViewClient(getActivity()));
@@ -33,5 +38,26 @@ public class FragmentIndex extends Fragment {
 		WebSettings setting = webView.getSettings();
 		setting.setJavaScriptEnabled(true);
 
+		flag = true;
+
 	}
+
+	@Override
+	public void onPause() {
+		System.out.println("index>>>>>>>>>>>>>>>onPause");
+		super.onPause();
+	}
+
+	@Override
+	public void onStop() {
+		System.out.println("index>>>>>>>>>>>>>>>onStop");
+		super.onStop();
+	}
+
+	@Override
+	public void onDestroyView() {
+		System.out.println("index>>>>>>>>>>>>>>>onDestroyView");
+		super.onDestroyView();
+	}
+
 }

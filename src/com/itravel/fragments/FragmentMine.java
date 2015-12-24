@@ -1,5 +1,6 @@
 package com.itravel.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import com.itravel.webview.MyWebViewClient;
 
 public class FragmentMine extends Fragment {
 	private WebView webView;
+	private boolean flag = false;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -19,12 +21,21 @@ public class FragmentMine extends Fragment {
 		return inflater.inflate(R.layout.fragment_mine, container, false);
 	}
 
+	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	public void onStart() {
 		super.onStart();
+		if (flag) {
+			return;
+		}
+
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/mine/index.html");
 		webView.setWebViewClient(new MyWebViewClient(getActivity()));
 		webView.getSettings().setJavaScriptEnabled(true);
+
+		flag = true;
+
 	}
+
 }

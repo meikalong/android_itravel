@@ -1,5 +1,6 @@
 package com.itravel.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,8 +11,10 @@ import android.webkit.WebView;
 import com.itravel.R;
 import com.itravel.webview.MyWebViewClient;
 
+@SuppressLint("SetJavaScriptEnabled")
 public class FragmentSort extends Fragment {
 	private WebView webView;
+	private boolean flag = false;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,9 +25,15 @@ public class FragmentSort extends Fragment {
 	@Override
 	public void onStart() {
 		super.onStart();
+		if (flag) {
+			return;
+		}
+
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/sort/index.html");
 		webView.setWebViewClient(new MyWebViewClient(getActivity()));
 		webView.getSettings().setJavaScriptEnabled(true);
+
+		flag = true;
 	}
 }
