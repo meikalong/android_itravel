@@ -13,7 +13,8 @@ public class MyWebViewClient extends WebViewClient {
 
 	// 提示信息
 	private LoadingDialog dialog;
-	Toast toast;
+
+	// Toast toast;
 
 	public MyWebViewClient(Context context) {
 		this.context = context;
@@ -30,22 +31,24 @@ public class MyWebViewClient extends WebViewClient {
 		dialog = new LoadingDialog(context);
 		dialog.setCanceledOnTouchOutside(false);
 		dialog.show();
-		toast = Toast.makeText(context, "loading.......", Toast.LENGTH_LONG);
-		toast.show();
+		// toast = Toast.makeText(context, "loading.......", Toast.LENGTH_LONG);
+		// toast.show();
 	}
 
 	// 加载完成时要做的工作
 	public void onPageFinished(WebView view, String url) {
 		super.onPageFinished(view, url);
 		dialog.cancel();
-		toast.cancel();
-		toast = Toast.makeText(context, "finish.......", Toast.LENGTH_LONG);
-		toast.show();
+		// toast.cancel();
+		// toast = Toast.makeText(context, "finish.......", Toast.LENGTH_LONG);
+		// toast.show();
 	}
 
 	// 加载错误时要做的工作
 	public void onReceivedError(WebView view, int errorCode,
 			String description, String failingUrl) {
+		dialog.cancel();
+		// toast.cancel();
 		Toast.makeText(context, errorCode + "/" + description,
 				Toast.LENGTH_LONG).show();
 	}
