@@ -8,12 +8,19 @@
 package com.itravel;
 
 public final class R {
+    public static final class anim {
+        public static final int myslide_in_right=0x7f040000;
+        public static final int myslide_out_left=0x7f040001;
+        public static final int slide_in_left=0x7f040002;
+        public static final int slide_out_right=0x7f040003;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int ccc=0x7f040002;
-        public static final int skin_tabbar_bg=0x7f040000;
-        public static final int white=0x7f040001;
+        public static final int action_bar=0x7f050003;
+        public static final int ccc=0x7f050002;
+        public static final int skin_tabbar_bg=0x7f050000;
+        public static final int white=0x7f050001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -23,8 +30,8 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int arrow_left=0x7f020000;
@@ -44,41 +51,44 @@ public final class R {
         public static final int skin_tabbar_icon_sort_select=0x7f02000e;
     }
     public static final class id {
-        public static final int LinearLayout=0x7f09000b;
-        public static final int action_settings=0x7f09000d;
-        public static final int frameMenu=0x7f090001;
-        public static final int frame_content=0x7f090000;
-        public static final int image_find=0x7f090007;
-        public static final int image_index=0x7f090003;
-        public static final int image_mine=0x7f090009;
-        public static final int image_sort=0x7f090005;
-        public static final int layout_find=0x7f090006;
-        public static final int layout_index=0x7f090002;
-        public static final int layout_mine=0x7f090008;
-        public static final int layout_sort=0x7f090004;
-        public static final int progressBar1=0x7f09000c;
-        public static final int webView=0x7f09000a;
+        public static final int LinearLayout=0x7f0a000d;
+        public static final int action_settings=0x7f0a000f;
+        public static final int actionbarLayoutId=0x7f0a0000;
+        public static final int back=0x7f0a0001;
+        public static final int frameMenu=0x7f0a0003;
+        public static final int frame_content=0x7f0a0002;
+        public static final int image_find=0x7f0a0009;
+        public static final int image_index=0x7f0a0005;
+        public static final int image_mine=0x7f0a000b;
+        public static final int image_sort=0x7f0a0007;
+        public static final int layout_find=0x7f0a0008;
+        public static final int layout_index=0x7f0a0004;
+        public static final int layout_mine=0x7f0a000a;
+        public static final int layout_sort=0x7f0a0006;
+        public static final int progressBar1=0x7f0a000e;
+        public static final int webView=0x7f0a000c;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_webview=0x7f030001;
-        public static final int dialog_loading=0x7f030002;
-        public static final int fragment_find=0x7f030003;
-        public static final int fragment_index=0x7f030004;
-        public static final int fragment_mine=0x7f030005;
-        public static final int fragment_sort=0x7f030006;
+        public static final int actionbar_layout=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_webview=0x7f030002;
+        public static final int dialog_loading=0x7f030003;
+        public static final int fragment_find=0x7f030004;
+        public static final int fragment_index=0x7f030005;
+        public static final int fragment_mine=0x7f030006;
+        public static final int fragment_sort=0x7f030007;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f060002;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060001;
-        public static final int icon_home_find=0x7f060004;
-        public static final int icon_home_index=0x7f060003;
-        public static final int icon_home_mine=0x7f060006;
-        public static final int icon_home_sort=0x7f060005;
+        public static final int action_settings=0x7f070002;
+        public static final int app_name=0x7f070000;
+        public static final int hello_world=0x7f070001;
+        public static final int icon_home_find=0x7f070004;
+        public static final int icon_home_index=0x7f070003;
+        public static final int icon_home_mine=0x7f070006;
+        public static final int icon_home_sort=0x7f070005;
     }
     public static final class style {
         /** 
@@ -104,13 +114,13 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
         /**  loadingDialogStyle 
          */
-        public static final int loadingDialogStyle=0x7f070002;
+        public static final int loadingDialogStyle=0x7f080002;
     }
 }

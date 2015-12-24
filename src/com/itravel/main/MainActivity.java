@@ -170,4 +170,5 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		fragmentTransaction.commit();
 		currentFragment = to;
 	}
+
 }

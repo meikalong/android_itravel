@@ -1,5 +1,6 @@
 package com.itravel.webview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.itravel.R;
 import com.itravel.activity.WebViewActivity;
 import com.itravel.dialog.LoadingDialog;
 
@@ -44,6 +46,9 @@ public class MyWebViewClient extends WebViewClient {
 			// 此处使用putExtras，接受方就响应的使用getExtra
 			intent.putExtras(b);
 			context.startActivity(intent);
+			Activity activity = (Activity) context;
+			activity.overridePendingTransition(R.anim.myslide_in_right,
+					R.anim.myslide_out_left);
 		} else {
 			view.loadUrl(url);
 		}

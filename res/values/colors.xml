@@ -4,4 +4,6 @@
 <color name="skin_tabbar_bg">#FCF8FC</color>
 <color name="white">#fff</color>
 <color name="ccc">#ccc</color>
+    <color name="action_bar">#F8F8F8</color>
+    <!-- FFFFFF -->
 </resources>
