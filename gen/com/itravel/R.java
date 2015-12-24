@@ -17,8 +17,42 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int action_bar=0x7f050003;
+        /**  FFFFFF 
+ actionBar颜色 
+         */
+        public static final int action_bar_bk=0x7f050003;
         public static final int ccc=0x7f050002;
+        /**  A really bright Holo shade of blue 
+         */
+        public static final int holo_blue_bright=0x7f05000d;
+        /**  A dark Holo shade of blue 
+         */
+        public static final int holo_blue_dark=0x7f050007;
+        /**  下拉刷新颜色 
+ A light Holo shade of blue 
+         */
+        public static final int holo_blue_light=0x7f050004;
+        /**  A dark Holo shade of green 
+         */
+        public static final int holo_green_dark=0x7f050008;
+        /**  A light Holo shade of green 
+         */
+        public static final int holo_green_light=0x7f050005;
+        /**  A dark Holo shade of orange 
+         */
+        public static final int holo_orange_dark=0x7f05000c;
+        /**  A light Holo shade of orange 
+         */
+        public static final int holo_orange_light=0x7f05000b;
+        /**  A Holo shade of purple 
+         */
+        public static final int holo_purple=0x7f05000a;
+        /**  A dark Holo shade of red 
+         */
+        public static final int holo_red_dark=0x7f050009;
+        /**  A light Holo shade of red 
+         */
+        public static final int holo_red_light=0x7f050006;
         public static final int skin_tabbar_bg=0x7f050000;
         public static final int white=0x7f050001;
     }
@@ -34,25 +68,28 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int arrow_left=0x7f020000;
-        public static final int dialog_bk=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int icon_home_find=0x7f020003;
-        public static final int icon_home_find_selected=0x7f020004;
-        public static final int icon_home_index=0x7f020005;
-        public static final int icon_home_index_selected=0x7f020006;
-        public static final int icon_home_mine=0x7f020007;
-        public static final int icon_home_mine_selected=0x7f020008;
-        public static final int icon_home_sort=0x7f020009;
-        public static final int icon_home_sort_selected=0x7f02000a;
-        public static final int skin_tabbar_icon_find_select=0x7f02000b;
-        public static final int skin_tabbar_icon_index_select=0x7f02000c;
-        public static final int skin_tabbar_icon_mine_select=0x7f02000d;
-        public static final int skin_tabbar_icon_sort_select=0x7f02000e;
+        public static final int action_bar_image_btn_press=0x7f020000;
+        public static final int arrow_left=0x7f020001;
+        public static final int clr_normal=0x7f020010;
+        public static final int clr_pressed=0x7f020011;
+        public static final int dialog_bk=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int icon_home_find=0x7f020004;
+        public static final int icon_home_find_selected=0x7f020005;
+        public static final int icon_home_index=0x7f020006;
+        public static final int icon_home_index_selected=0x7f020007;
+        public static final int icon_home_mine=0x7f020008;
+        public static final int icon_home_mine_selected=0x7f020009;
+        public static final int icon_home_sort=0x7f02000a;
+        public static final int icon_home_sort_selected=0x7f02000b;
+        public static final int skin_tabbar_icon_find_select=0x7f02000c;
+        public static final int skin_tabbar_icon_index_select=0x7f02000d;
+        public static final int skin_tabbar_icon_mine_select=0x7f02000e;
+        public static final int skin_tabbar_icon_sort_select=0x7f02000f;
     }
     public static final class id {
         public static final int LinearLayout=0x7f0a000d;
-        public static final int action_settings=0x7f0a000f;
+        public static final int action_settings=0x7f0a0010;
         public static final int actionbarLayoutId=0x7f0a0000;
         public static final int back=0x7f0a0001;
         public static final int frameMenu=0x7f0a0003;
@@ -66,6 +103,7 @@ public final class R {
         public static final int layout_mine=0x7f0a000a;
         public static final int layout_sort=0x7f0a0006;
         public static final int progressBar1=0x7f0a000e;
+        public static final int swipe_container=0x7f0a000f;
         public static final int webView=0x7f0a000c;
     }
     public static final class layout {
@@ -89,6 +127,15 @@ public final class R {
         public static final int icon_home_index=0x7f070003;
         public static final int icon_home_mine=0x7f070006;
         public static final int icon_home_sort=0x7f070005;
+        public static final int not_updated_yet=0x7f07000a;
+        /**  下拉刷新 
+         */
+        public static final int pull_to_refresh=0x7f070007;
+        public static final int refreshing=0x7f070009;
+        public static final int release_to_refresh=0x7f070008;
+        public static final int time_error=0x7f07000d;
+        public static final int updated_at=0x7f07000b;
+        public static final int updated_just_now=0x7f07000c;
     }
     public static final class style {
         /** 

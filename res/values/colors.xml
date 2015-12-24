@@ -1,9 +1,36 @@
-<?xml version="1.0" encoding="utf-8" ?> 
-<resources> 
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
-<color name="skin_tabbar_bg">#FCF8FC</color>
-<color name="white">#fff</color>
-<color name="ccc">#ccc</color>
-    <color name="action_bar">#F8F8F8</color>
+    <color name="skin_tabbar_bg">#FCF8FC</color>
+    <color name="white">#fff</color>
+    <color name="ccc">#ccc</color>
     <!-- FFFFFF -->
+
+	<!-- actionBar颜色 -->
+    <color name="action_bar_bk">#F8F8F8</color>
+    <drawable name="clr_normal">#F8F8F8</drawable>
+    <drawable name="clr_pressed">#ccc</drawable>
+    
+    <!-- 下拉刷新颜色 -->
+    <!-- A light Holo shade of blue -->  
+    <color name="holo_blue_light">#ff33b5e5</color>  
+    <!-- A light Holo shade of green -->  
+    <color name="holo_green_light">#ff99cc00</color>  
+    <!-- A light Holo shade of red -->  
+    <color name="holo_red_light">#ffff4444</color>  
+    <!-- A dark Holo shade of blue -->  
+    <color name="holo_blue_dark">#ff0099cc</color>  
+    <!-- A dark Holo shade of green -->  
+    <color name="holo_green_dark">#ff669900</color>  
+    <!-- A dark Holo shade of red -->  
+    <color name="holo_red_dark">#ffcc0000</color>  
+    <!-- A Holo shade of purple -->  
+    <color name="holo_purple">#ffaa66cc</color>  
+    <!-- A light Holo shade of orange -->  
+    <color name="holo_orange_light">#ffffbb33</color>  
+    <!-- A dark Holo shade of orange -->  
+    <color name="holo_orange_dark">#ffff8800</color>  
+    <!-- A really bright Holo shade of blue -->  
+    <color name="holo_blue_bright">#ff00ddff</color>  
+
 </resources>

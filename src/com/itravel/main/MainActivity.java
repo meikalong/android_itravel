@@ -1,13 +1,17 @@
 package com.itravel.main;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.itravel.R;
 import com.itravel.fragments.FragmentFind;
@@ -28,6 +32,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	// 定义图片组件对象
 	private ImageView indexIv, sortIv, findIv, mineIv;
 
+	// 定义一个变量，来标识是否退出
+	private static boolean isExit = false;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
@@ -38,6 +45,15 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		initData();
 
 		clickIndexBtn();
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			exit();
+			return false;
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 
 	/**
@@ -150,6 +166,11 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		mineIv.setSelected(false);
 	}
 
+	/**
+	 * 切换fragment
+	 * 
+	 * @param to
+	 */
 	private void switchFragment(android.support.v4.app.Fragment to) {
 		if (currentFragment == to) {
 			return;
@@ -169,6 +190,30 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		// 事务管理提交
 		fragmentTransaction.commit();
 		currentFragment = to;
+	}
+
+	/* 退出功能 */
+
+	private static Handler mHandler = new Handler() {
+
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			isExit = false;
+		}
+	};
+
+	private void exit() {
+		if (!isExit) {
+			isExit = true;
+			Toast.makeText(getApplicationContext(), "再按一次退出程序",
+					Toast.LENGTH_SHORT).show();
+			// 利用handler延迟发送更改状态信息
+			mHandler.sendEmptyMessageDelayed(0, 2000);
+		} else {
+			finish();
+			System.exit(0);
+		}
 	}
 
 }
