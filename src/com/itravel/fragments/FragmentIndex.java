@@ -32,8 +32,8 @@ public class FragmentIndex extends Fragment {
 			return;
 		}
 		webView = (WebView) getView().findViewById(R.id.webView);
-		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/index/index.html");
 		webView.setWebViewClient(new MyWebViewClient(getActivity()));
+		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/index/index.html");
 
 		WebSettings setting = webView.getSettings();
 		setting.setJavaScriptEnabled(true);

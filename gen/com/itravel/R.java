@@ -27,23 +27,24 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int dialog_bk=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int icon_home_find=0x7f020002;
-        public static final int icon_home_find_selected=0x7f020003;
-        public static final int icon_home_index=0x7f020004;
-        public static final int icon_home_index_selected=0x7f020005;
-        public static final int icon_home_mine=0x7f020006;
-        public static final int icon_home_mine_selected=0x7f020007;
-        public static final int icon_home_sort=0x7f020008;
-        public static final int icon_home_sort_selected=0x7f020009;
-        public static final int skin_tabbar_icon_find_select=0x7f02000a;
-        public static final int skin_tabbar_icon_index_select=0x7f02000b;
-        public static final int skin_tabbar_icon_mine_select=0x7f02000c;
-        public static final int skin_tabbar_icon_sort_select=0x7f02000d;
+        public static final int arrow_left=0x7f020000;
+        public static final int dialog_bk=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int icon_home_find=0x7f020003;
+        public static final int icon_home_find_selected=0x7f020004;
+        public static final int icon_home_index=0x7f020005;
+        public static final int icon_home_index_selected=0x7f020006;
+        public static final int icon_home_mine=0x7f020007;
+        public static final int icon_home_mine_selected=0x7f020008;
+        public static final int icon_home_sort=0x7f020009;
+        public static final int icon_home_sort_selected=0x7f02000a;
+        public static final int skin_tabbar_icon_find_select=0x7f02000b;
+        public static final int skin_tabbar_icon_index_select=0x7f02000c;
+        public static final int skin_tabbar_icon_mine_select=0x7f02000d;
+        public static final int skin_tabbar_icon_sort_select=0x7f02000e;
     }
     public static final class id {
-        public static final int LinearLayout=0x7f09000a;
+        public static final int LinearLayout=0x7f09000b;
         public static final int action_settings=0x7f09000d;
         public static final int frameMenu=0x7f090001;
         public static final int frame_content=0x7f090000;
@@ -55,16 +56,17 @@ public final class R {
         public static final int layout_index=0x7f090002;
         public static final int layout_mine=0x7f090008;
         public static final int layout_sort=0x7f090004;
-        public static final int progressBar1=0x7f09000b;
-        public static final int webView=0x7f09000c;
+        public static final int progressBar1=0x7f09000c;
+        public static final int webView=0x7f09000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int dialog_loading=0x7f030001;
-        public static final int fragment_find=0x7f030002;
-        public static final int fragment_index=0x7f030003;
-        public static final int fragment_mine=0x7f030004;
-        public static final int fragment_sort=0x7f030005;
+        public static final int activity_webview=0x7f030001;
+        public static final int dialog_loading=0x7f030002;
+        public static final int fragment_find=0x7f030003;
+        public static final int fragment_index=0x7f030004;
+        public static final int fragment_mine=0x7f030005;
+        public static final int fragment_sort=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -107,6 +109,8 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
+        /**  loadingDialogStyle 
+         */
         public static final int loadingDialogStyle=0x7f070002;
     }
 }

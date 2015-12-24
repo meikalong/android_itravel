@@ -2,4 +2,10 @@
 
 .strong { font-weight: bolder; }
 
+.overflow-1, .overflow-2 { text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; }
+
+.overflow-1 { -webkit-line-clamp: 1; }
+
+.overflow-2 { -webkit-line-clamp: 2; }
+
 /*# sourceMappingURL=text.css.map */
