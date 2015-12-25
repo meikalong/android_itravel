@@ -8,4 +8,6 @@
 
 .overflow-2 { -webkit-line-clamp: 2; }
 
+* { -moz-user-select: none; -webkit-user-select: none; }
+
 /*# sourceMappingURL=text.css.map */

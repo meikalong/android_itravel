@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*滚动条宽度*/
+::-webkit-scrollbar { width: 8px; }
+
+/* 轨道样式 */
+::-webkit-scrollbar-track { background-color: red; }
+
+/* Handle样式 */
+::-webkit-scrollbar-thumb { border-radius: 10px; background: rgba(0, 0, 0, 0.2); }
+
+/*当前窗口未激活的情况下*/
+::-webkit-scrollbar-thumb:window-inactive { background: rgba(0, 0, 0, 0.1); }
+
+/*hover到滚动条上*/
+::-webkit-scrollbar-thumb:vertical:hover { background-color: rgba(0, 0, 0, 0.3); }
+
+/*滚动条按下*/
+::-webkit-scrollbar-thumb:vertical:active { background-color: rgba(0, 0, 0, 0.7); }
+
+/*# sourceMappingURL=scrollbar.css.map */

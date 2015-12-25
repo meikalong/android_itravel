@@ -14,17 +14,24 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.itravel.main.MainActivity"
+            android:name="com.itravel.main.ImageActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar"
-            android:windowSoftInputMode="adjustPan" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.itravel.activity.WebViewActivity" >
+         <activity
+            android:name="com.itravel.main.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.itravel.activity.WebViewActivity" 
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

@@ -8,10 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.itravel.R;
+import com.itravel.util.WebViewUtil;
 import com.itravel.webview.MyWebViewClient;
 
 public class FragmentIndex extends Fragment {
@@ -30,37 +30,25 @@ public class FragmentIndex extends Fragment {
 	@Override
 	public void onStart() {
 		super.onStart();
-
-		if (flag) {
-			return;
-		}
-		webView = (WebView) getView().findViewById(R.id.webView);
-		webView.setWebViewClient(new MyWebViewClient(getActivity()));
-		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/index/index.html");
-
-		WebSettings setting = webView.getSettings();
-		setting.setJavaScriptEnabled(true);
-
-		flag = true;
-
+		initWebView();
 	}
 
 	@Override
 	public void onPause() {
-		System.out.println("index>>>>>>>>>>>>>>>onPause");
 		super.onPause();
+		System.out.println("index>>>>>>>>>>>>>>>onPause");
 	}
 
 	@Override
 	public void onStop() {
-		System.out.println("index>>>>>>>>>>>>>>>onStop");
 		super.onStop();
+		System.out.println("index>>>>>>>>>>>>>>>onStop");
 	}
 
 	@Override
 	public void onDestroyView() {
-		System.out.println("index>>>>>>>>>>>>>>>onDestroyView");
 		super.onDestroyView();
+		System.out.println("index>>>>>>>>>>>>>>>onDestroyView");
 	}
 
 	/**
@@ -109,6 +97,20 @@ public class FragmentIndex extends Fragment {
 
 		return view;
 
+	}
+
+	/**
+	 * ≥ı ºªØwebView
+	 */
+	private void initWebView() {
+		if (flag) {
+			return;
+		}
+		webView = (WebView) getView().findViewById(R.id.webView);
+		webView.setWebViewClient(new MyWebViewClient(false, getActivity()));
+		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/index/index.html");
+		WebViewUtil.setJavaScriptEnabled(webView);
+		flag = true;
 	}
 
 }

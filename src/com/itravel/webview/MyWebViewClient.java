@@ -18,22 +18,38 @@ public class MyWebViewClient extends WebViewClient {
 
 	// 提示信息
 	private LoadingDialog dialog;
-	// Toast toast;
 
 	// 是否显示在当前页
 	private boolean currentActivity;
+	private boolean ifDialog;
 
 	public MyWebViewClient(Context context) {
-		this.context = context;
-		this.currentActivity = false;
+		myWebViewClient(context, false, true);
 	}
 
 	public MyWebViewClient(Context context, boolean currentActivity) {
-		this.context = context;
-		this.currentActivity = currentActivity;
+		myWebViewClient(context, currentActivity, true);
 	}
 
-	public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	public MyWebViewClient(boolean ifDialog, Context context) {
+		myWebViewClient(context, false, ifDialog);
+	}
+
+	/**
+	 * @param context
+	 * @param currentActivity
+	 *            是否在当前activity中显示
+	 * @param ifDialog
+	 *            是否显示对话框
+	 */
+	private void myWebViewClient(Context context, boolean currentActivity,
+			boolean ifDialog) {
+		this.context = context;
+		this.currentActivity = currentActivity;
+		this.ifDialog = ifDialog;
+	}
+
+	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
 
 		if (url.contains(".html") && !currentActivity) {
 			Intent intent = new Intent();
@@ -50,39 +66,44 @@ public class MyWebViewClient extends WebViewClient {
 			activity.overridePendingTransition(R.anim.myslide_in_right,
 					R.anim.myslide_out_left);
 		} else {
-			view.loadUrl(url);
+			webView.loadUrl(url);
 		}
 		return true;
 	}
 
 	// 开始加载网页时要做的工作
-	public void onPageStarted(WebView view, String url, Bitmap favicon) {
-		super.onPageStarted(view, url, favicon);
+	public void onPageStarted(WebView webView, String url, Bitmap favicon) {
 		System.out.println("onPageStarted>>>>>>>>>>>>>>>url:>>>" + url);
-		dialog = new LoadingDialog(context);
-		dialog.setCanceledOnTouchOutside(false);
-		dialog.show();
-		// toast = Toast.makeText(context, "loading.......", Toast.LENGTH_LONG);
-		// toast.show();
+		showDialog(ifDialog);
 	}
 
 	// 加载完成时要做的工作
 	public void onPageFinished(WebView view, String url) {
-		super.onPageFinished(view, url);
-		dialog.cancel();
 		System.out.println("onPageFinished>>>>>>>>>>>>>>>url:>>>" + url);
-		// toast.cancel();
-		// toast = Toast.makeText(context, "finish.......", Toast.LENGTH_LONG);
-		// toast.show();
+		cancleDialog();
 	}
 
 	// 加载错误时要做的工作
 	public void onReceivedError(WebView view, int errorCode,
 			String description, String failingUrl) {
-		dialog.cancel();
-		// toast.cancel();
-		Toast.makeText(context, errorCode + "/" + description,
+		cancleDialog();
+		Toast.makeText(context, errorCode + "：" + description,
 				Toast.LENGTH_LONG).show();
+	}
+
+	private void showDialog(boolean ifDialog) {
+		if (ifDialog) {
+			dialog = new LoadingDialog(context);
+			dialog.setCanceledOnTouchOutside(false);
+			dialog.show();
+
+		}
+	}
+
+	private void cancleDialog() {
+		if (dialog != null) {
+			dialog.cancel();
+		}
 	}
 
 	// 拦截请求，加载本地静态文件，例如加载本地js文件或者css文件，加快页面加载速度
