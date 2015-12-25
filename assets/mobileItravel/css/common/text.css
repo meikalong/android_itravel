@@ -10,4 +10,8 @@
 
 * { -moz-user-select: none; -webkit-user-select: none; }
 
+.text-middle:before { content: ''; display: inline-block; vertical-align: middle; height: 100%; }
+
+.text-content { display: inline-block; vertical-align: middle; }
+
 /*# sourceMappingURL=text.css.map */
