@@ -15,7 +15,7 @@
 @media (min-width: 500px) { .top .msg .big { font-size: 22px; } }
 .top .msg .middle { padding: 0px 1.5%; }
 
-.column { background-color: #524256; padding-top: 3%; }
+.column { background-color: #524256; padding-top: 3%; padding-bottom: 3%; }
 .column .title, .column .img { margin-bottom: 3%; position: relative; padding: 0px 3%; }
 .column .title .msg { color: #fff; text-align: center; padding-bottom: 3%; }
 @media (min-width: 300px) { .column .title .msg { font-size: 16px; } }

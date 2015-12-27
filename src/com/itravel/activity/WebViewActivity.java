@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -26,8 +27,19 @@ public class WebViewActivity extends Activity {
 		Intent intent = getIntent();
 		webView = (WebView) findViewById(R.id.webView);
 
-		webView.setWebViewClient(new MyWebViewClient(this, true));
+		webView.setWebViewClient(new MyWebViewClient(this));
 		webView.loadUrl(intent.getStringExtra("url"));
+
+		webView.getSettings().setJavaScriptEnabled(true);
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			exit();
+			return false;
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 
 	/**
@@ -60,13 +72,19 @@ public class WebViewActivity extends Activity {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.back: {
-			finish();
-			overridePendingTransition(R.anim.slide_in_left,
-					R.anim.slide_out_right);
+			exit();
 		}
 			break;
 		default:
 			break;
 		}
+	}
+
+	/**
+	 * ÍË³ö½çÃæ
+	 */
+	private void exit() {
+		finish();
+		overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 	}
 }

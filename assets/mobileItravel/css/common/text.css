@@ -10,6 +10,8 @@
 
 * { -moz-user-select: none; -webkit-user-select: none; }
 
+input { -moz-user-select: auto; -webkit-user-select: auto; }
+
 .text-middle:before { content: ''; display: inline-block; vertical-align: middle; height: 100%; }
 
 .text-content { display: inline-block; vertical-align: middle; }
