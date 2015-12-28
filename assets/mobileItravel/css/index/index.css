@@ -40,7 +40,7 @@
 
 .h small { color: #777; font-size: smaller; font-weight: normal; line-height: 1.5; }
 
-.info { position: relative; }
+.info { position: relative; margin-top: 15px; }
 .info .title { padding: 0px 4%; }
 
 .info-msg { position: absolute; width: 100%; height: 100%; text-align: center; line-height: 100%; padding-top: 31%; color: #fff; }
