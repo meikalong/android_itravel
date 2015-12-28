@@ -89,24 +89,25 @@ public final class R {
         public static final int welcome=0x7f020010;
     }
     public static final class id {
-        public static final int LinearLayout=0x7f0a000d;
-        public static final int action_settings=0x7f0a0011;
+        public static final int LinearLayout=0x7f0a000e;
+        public static final int action_settings=0x7f0a0012;
         public static final int actionbarLayoutId=0x7f0a0000;
         public static final int back=0x7f0a0001;
-        public static final int frameMenu=0x7f0a0003;
-        public static final int frame_content=0x7f0a0002;
-        public static final int image_find=0x7f0a0009;
-        public static final int image_index=0x7f0a0005;
-        public static final int image_mine=0x7f0a000b;
-        public static final int image_sort=0x7f0a0007;
-        public static final int layout_find=0x7f0a0008;
-        public static final int layout_index=0x7f0a0004;
-        public static final int layout_mine=0x7f0a000a;
-        public static final int layout_sort=0x7f0a0006;
-        public static final int progressBar1=0x7f0a000e;
-        public static final int swipe_container=0x7f0a000f;
-        public static final int webView=0x7f0a000c;
-        public static final int welcome_img=0x7f0a0010;
+        public static final int frameMenu=0x7f0a0004;
+        public static final int frame_content=0x7f0a0003;
+        public static final int image_find=0x7f0a000a;
+        public static final int image_index=0x7f0a0006;
+        public static final int image_mine=0x7f0a000c;
+        public static final int image_sort=0x7f0a0008;
+        public static final int layout_find=0x7f0a0009;
+        public static final int layout_index=0x7f0a0005;
+        public static final int layout_mine=0x7f0a000b;
+        public static final int layout_sort=0x7f0a0007;
+        public static final int progressBar1=0x7f0a000f;
+        public static final int swipe_container=0x7f0a0010;
+        public static final int title=0x7f0a0002;
+        public static final int webView=0x7f0a000d;
+        public static final int welcome_img=0x7f0a0011;
     }
     public static final class layout {
         public static final int actionbar_layout=0x7f030000;

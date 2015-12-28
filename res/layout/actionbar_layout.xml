@@ -2,20 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/actionbarLayoutId"
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
+    android:layout_height="fill_parent"
     android:background="@color/action_bar_bk" >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginTop="55dp"
-        android:background="#ccc" >
-    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/back"
-        android:layout_width="60dp"
-        android:layout_height="match_parent"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
         android:orientation="vertical" 
         android:onClick="onClick"
         android:background="@drawable/action_bar_image_btn_press"
@@ -30,5 +23,21 @@
             android:src="@drawable/arrow_left"
              />
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" 
+        android:textSize="18sp"/>
+    
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/ccc"
+        android:layout_below="@+id/back"
+         >
+    </LinearLayout>
 
 </RelativeLayout>

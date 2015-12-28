@@ -12,6 +12,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView;
 
 import com.itravel.R;
+import com.itravel.webview.MyWebChromeClient;
 import com.itravel.webview.MyWebViewClient;
 
 public class WebViewActivity extends Activity {
@@ -28,6 +29,7 @@ public class WebViewActivity extends Activity {
 		webView = (WebView) findViewById(R.id.webView);
 
 		webView.setWebViewClient(new MyWebViewClient(this));
+		webView.setWebChromeClient(new MyWebChromeClient(this));
 		webView.loadUrl(intent.getStringExtra("url"));
 
 		webView.getSettings().setJavaScriptEnabled(true);
