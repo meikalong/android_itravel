@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 
 import com.itravel.R;
+import com.itravel.util.Global;
 import com.itravel.webview.MyWebViewClient;
 
 public class FragmentMine extends Fragment {
@@ -30,7 +31,11 @@ public class FragmentMine extends Fragment {
 		}
 
 		webView = (WebView) getView().findViewById(R.id.webView);
-		webView.loadUrl("file:///android_asset/mobileItravel/page/travel/mine/index.html");
+		if (Global.STATE) {
+			webView.loadUrl(Global.getServletName("mine"));
+		} else {
+			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/mine/index.html");
+		}
 		webView.setWebViewClient(new MyWebViewClient(getActivity()));
 		webView.getSettings().setJavaScriptEnabled(true);
 

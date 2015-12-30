@@ -57,6 +57,27 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
+	 * 点击事件
+	 */
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.layout_index:
+			clickIndexBtn();
+			break;
+		case R.id.layout_sort:
+			clickSortBtn();
+			break;
+		case R.id.layout_find:
+			clickFindBtn();
+			break;
+		case R.id.layout_mine:
+			clickMineBtn();
+			break;
+		}
+	}
+
+	/**
 	 * 初始化组件
 	 */
 	private void initView() {
@@ -84,27 +105,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		findFl.setOnClickListener(this);
 		mineFl.setOnClickListener(this);
 
-	}
-
-	/**
-	 * 点击事件
-	 */
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.layout_index:
-			clickIndexBtn();
-			break;
-		case R.id.layout_sort:
-			clickSortBtn();
-			break;
-		case R.id.layout_find:
-			clickFindBtn();
-			break;
-		case R.id.layout_mine:
-			clickMineBtn();
-			break;
-		}
 	}
 
 	/**

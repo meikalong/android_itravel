@@ -50,7 +50,7 @@ public class MyWebViewClient extends WebViewClient {
 
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
 
-		if (url.contains(".html") && !currentActivity) {
+		if (!currentActivity) {
 			Intent intent = new Intent();
 			// 第一参数取的是这个应用程序的activity，生命周期是整个应用
 			// 第二个参数是要跳转的页面的全路径
