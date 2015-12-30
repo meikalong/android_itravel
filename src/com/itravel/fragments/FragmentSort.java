@@ -32,7 +32,7 @@ public class FragmentSort extends Fragment {
 
 		webView = (WebView) getView().findViewById(R.id.webView);
 		if (Global.STATE) {
-			webView.loadUrl(Global.getServletName("sort"));
+			webView.loadUrl(Global.getServletName("travel/sort"));
 		} else {
 			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/sort/index.html");
 		}

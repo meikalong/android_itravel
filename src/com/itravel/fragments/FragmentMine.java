@@ -32,7 +32,7 @@ public class FragmentMine extends Fragment {
 
 		webView = (WebView) getView().findViewById(R.id.webView);
 		if (Global.STATE) {
-			webView.loadUrl(Global.getServletName("mine"));
+			webView.loadUrl(Global.getServletName("travel/mine"));
 		} else {
 			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/mine/index.html");
 		}
