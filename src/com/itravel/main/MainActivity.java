@@ -1,5 +1,6 @@
 package com.itravel.main;
 
+import android.content.BroadcastReceiver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.itravel.R;
+import com.itravel.baidumap.BaiduMap;
 import com.itravel.fragments.FragmentFind;
 import com.itravel.fragments.FragmentIndex;
 import com.itravel.fragments.FragmentMine;
@@ -37,13 +39,17 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
 	// 百度地图
 	private BaiduMap baiduMap;
+	// 广播
+	private BroadcastReceiver mReceiver;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
 		super.onCreate(savedInstanceState);
 
-		baiduMap = new BaiduMap(getApplicationContext());
+		baiduMap = new BaiduMap(this);
+		mReceiver = baiduMap.getSDKReceiver();
+		registerReceiver(mReceiver, baiduMap.getIntentFilter());
 
 		initView();
 
@@ -62,6 +68,12 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	protected void onStop() {
 		super.onStop();
 		baiduMap.onStop();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		unregisterReceiver(mReceiver);
 	}
 
 	@Override

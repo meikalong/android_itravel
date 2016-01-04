@@ -1,10 +1,15 @@
-package com.itravel.main;
+package com.itravel.baidumap;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.Poi;
+import com.baidu.mapapi.SDKInitializer;
 import com.itravel.baidumap.service.LocationService;
 
 /***
@@ -18,7 +23,7 @@ public class BaiduMap {
 	private LocationService locationService;
 
 	public BaiduMap(Context context) {
-		locationService = new LocationService(context);
+		this.locationService = new LocationService(context);
 	}
 
 	/***
@@ -116,9 +121,42 @@ public class BaiduMap {
 					sb.append("\ndescribe : ");
 					sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
 				}
-				System.out.println("BBBBBBBBBBBBBBBBB" + sb.toString());
+				System.out.println("KKKKKKKKKKKKK" + sb.toString());
 			}
 		}
 
 	};
+
+	public SDKReceiver getSDKReceiver() {
+		return new SDKReceiver();
+	}
+
+	public IntentFilter getIntentFilter() {
+		IntentFilter iFilter = new IntentFilter();
+		iFilter.addAction(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_OK);
+		iFilter.addAction(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR);
+		iFilter.addAction(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR);
+		return iFilter;
+	}
+
+	/**
+	 * 构造广播监听类，监听 SDK key 验证以及网络异常广播
+	 */
+	public class SDKReceiver extends BroadcastReceiver {
+		public void onReceive(Context context, Intent intent) {
+			String s = intent.getAction();
+			System.out.println("MMMMMMMMMMMMMMMMM   action: " + s);
+			if (s.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR)) {
+				Toast.makeText(context,
+						"key 验证出错! 请在 AndroidManifest.xml 文件中检查 key 设置",
+						Toast.LENGTH_LONG);
+			} else if (s
+					.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_OK)) {
+				Toast.makeText(context, "key 验证成功! 功能可以正常使用", Toast.LENGTH_LONG);
+			} else if (s
+					.equals(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR)) {
+				Toast.makeText(context, "网络出错", Toast.LENGTH_LONG);
+			}
+		}
+	}
 }
