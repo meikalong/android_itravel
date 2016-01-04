@@ -35,16 +35,33 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	// 定义一个变量，来标识是否退出
 	private static boolean isExit = false;
 
+	// 百度地图
+	private BaiduMap baiduMap;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
 		super.onCreate(savedInstanceState);
+
+		baiduMap = new BaiduMap(getApplicationContext());
 
 		initView();
 
 		initData();
 
 		clickIndexBtn();
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		baiduMap.onStart();
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		baiduMap.onStop();
 	}
 
 	@Override
