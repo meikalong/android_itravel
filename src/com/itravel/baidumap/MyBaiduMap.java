@@ -19,10 +19,10 @@ import com.itravel.baidumap.service.LocationService;
  * @author baidu
  *
  */
-public class BaiduMap {
+public class MyBaiduMap {
 	private LocationService locationService;
 
-	public BaiduMap(Context context) {
+	public MyBaiduMap(Context context) {
 		this.locationService = new LocationService(context);
 	}
 
@@ -122,6 +122,9 @@ public class BaiduMap {
 					sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
 				}
 				System.out.println("KKKKKKKKKKKKK" + sb.toString());
+				if ("161".equals(location.getLocType())) {
+					onStop();
+				}
 			}
 		}
 
@@ -141,6 +144,7 @@ public class BaiduMap {
 
 	/**
 	 * 构造广播监听类，监听 SDK key 验证以及网络异常广播
+	 * 每次打开软件的时候验证一下，如果软件没有完全关闭（这里指的完全关闭是被清理软件kill掉），是不会再次校验的
 	 */
 	public class SDKReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
@@ -149,13 +153,14 @@ public class BaiduMap {
 			if (s.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR)) {
 				Toast.makeText(context,
 						"key 验证出错! 请在 AndroidManifest.xml 文件中检查 key 设置",
-						Toast.LENGTH_LONG);
+						Toast.LENGTH_LONG).show();
 			} else if (s
 					.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_OK)) {
-				Toast.makeText(context, "key 验证成功! 功能可以正常使用", Toast.LENGTH_LONG);
+				Toast.makeText(context, "key 验证成功! 功能可以正常使用", Toast.LENGTH_LONG)
+						.show();
 			} else if (s
 					.equals(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR)) {
-				Toast.makeText(context, "网络出错", Toast.LENGTH_LONG);
+				Toast.makeText(context, "网络出错", Toast.LENGTH_LONG).show();
 			}
 		}
 	}

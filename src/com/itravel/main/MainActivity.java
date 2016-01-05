@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.itravel.R;
-import com.itravel.baidumap.BaiduMap;
+import com.itravel.baidumap.MyBaiduMap;
 import com.itravel.fragments.FragmentFind;
 import com.itravel.fragments.FragmentIndex;
 import com.itravel.fragments.FragmentMine;
@@ -38,7 +38,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	private static boolean isExit = false;
 
 	// 百度地图
-	private BaiduMap baiduMap;
+	private MyBaiduMap baiduMap;
 	// 广播
 	private BroadcastReceiver mReceiver;
 
@@ -47,9 +47,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		super.onCreate(savedInstanceState);
 
-		baiduMap = new BaiduMap(this);
+		baiduMap = new MyBaiduMap(this);
 		mReceiver = baiduMap.getSDKReceiver();
 		registerReceiver(mReceiver, baiduMap.getIntentFilter());
+		baiduMap.onStart();
 
 		initView();
 
@@ -61,7 +62,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		baiduMap.onStart();
 	}
 
 	@Override

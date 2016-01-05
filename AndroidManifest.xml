@@ -12,16 +12,20 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        android:name="com.itravel.baidumap.LocationApplication">
+        
+        <!-- 公司测试用 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="jGL6SqeyjG1c0k8cdSkpTsMp" />
 
+         <!-- 家里测试用 -->
         <!--
              <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="jGL6SqeyjG1c0k8cdSkpTsMp" />
-        -->
-        <meta-data
-            android:name="com.baidu.lbsapi.API_KEY"
             android:value="8Ym7Ko7cxop4lK9DQC4OZCM2" />
+        -->
 
         <activity
             android:name="com.itravel.main.ImageActivity"
@@ -85,5 +89,5 @@
         android:normalScreens="false"
         android:resizeable="true"
         android:smallScreens="true" />
-    
+
 </manifest>
