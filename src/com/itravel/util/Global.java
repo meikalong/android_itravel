@@ -81,13 +81,13 @@ public class Global {
 	}
 
 	/**
-	 * 最后返回：http://192.168.0.100:8080/itravel/
+	 * 最后返回：http://192.168.0.100/itravel/
 	 * 
 	 * @return
 	 */
 	public static String getServletName() {
 		if (servletName == null) {
-			servletName = "http://" + IP + ":8080/itravel/";
+			servletName = "http://" + IP + "/itravel/";
 		}
 		return servletName;
 	}
