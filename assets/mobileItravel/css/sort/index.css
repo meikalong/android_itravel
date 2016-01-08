@@ -23,7 +23,7 @@
 
 .nav .active a { color: #82DBBA; }
 
-.column-right { background-color: #EEEEEE; padding-top: 4%; }
+.column-right { background-color: #EEEEEE; display: none; padding-top: 4%; }
 .column-right img { width: 44%; margin-left: 4%; float: left; }
 .column-right .right-img { margin-bottom: 4%; position: relative; }
 .column-right .right-img .msg1, .column-right .right-img .msg2 { width: 44%; height: 100%; top: 0px; position: absolute; color: #fff; text-align: center; }
@@ -36,5 +36,7 @@
 .column-right .right-img .msg1 .text, .column-right .right-img .msg2 .text { display: inline-block; vertical-align: middle; }
 .column-right .right-img .msg1 { left: 4%; }
 .column-right .right-img .msg2 { left: 52%; }
+
+iframe { display: none; height: 100%; }
 
 /*# sourceMappingURL=index.css.map */

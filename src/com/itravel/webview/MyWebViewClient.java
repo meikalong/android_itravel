@@ -50,6 +50,10 @@ public class MyWebViewClient extends WebViewClient {
 
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
 
+		if (url.contains("iframepage")) {// iframepage里面的页面是iframe引用的页面
+			return false;
+		}
+
 		if (!currentActivity) {
 			Intent intent = new Intent();
 			// 第一参数取的是这个应用程序的activity，生命周期是整个应用
