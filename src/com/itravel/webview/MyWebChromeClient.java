@@ -49,7 +49,7 @@ public class MyWebChromeClient extends WebChromeClient {
 	@Override
 	public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
 		AlertDialog.Builder b2 = new AlertDialog.Builder(activity)
-				.setTitle("onConsoleMessage1提示信息")
+				.setTitle("第" + consoleMessage.lineNumber() + "行")
 				.setMessage(consoleMessage.message())
 				.setPositiveButton("ok", new AlertDialog.OnClickListener() {
 					@Override

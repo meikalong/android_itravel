@@ -24,7 +24,8 @@ public class Global {
 						if (Integer.parseInt(s[3]) < 255)
 							b = true;
 		}
-		return b;
+		// return b;
+		return true;
 	}
 
 	public static boolean isPing(String ip) {
