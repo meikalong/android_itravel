@@ -9,7 +9,7 @@ import java.util.Locale;
 import android.os.Environment;
 
 /***
- * 简单的日志记录工具
+ * 绠�鍗曠殑鏃ュ織璁板綍宸ュ叿
  * 
  * @author baidu
  *

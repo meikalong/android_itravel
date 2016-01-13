@@ -42,14 +42,14 @@ public class MyWebChromeClient extends WebChromeClient {
 	@Override
 	public boolean onJsAlert(WebView view, String url, String message,
 			JsResult result) {
-		// ÕâÀïÊ²Ã´¶¼²»Òª×ö£¬Ò²²»Òª½Ó¹Ü¿ØÖÆ
-		return false; // ×¢ÒâÕâÀïÒ»¶¨Òª·µ»Øfalse£¬²»È»jsÖĞµÄ´úÂëÃ»ÓĞ°ì·¨ÍùÏÂÔËĞĞ
+		// è¿™é‡Œä»€ä¹ˆéƒ½ä¸è¦åšï¼Œä¹Ÿä¸è¦æ¥ç®¡æ§åˆ¶
+		return false; // æ³¨æ„è¿™é‡Œä¸€å®šè¦è¿”å›falseï¼Œä¸ç„¶jsä¸­çš„ä»£ç æ²¡æœ‰åŠæ³•å¾€ä¸‹è¿è¡Œ
 	}
 
 	@Override
 	public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
 		AlertDialog.Builder b2 = new AlertDialog.Builder(activity)
-				.setTitle("onConsoleMessage1ÌáÊ¾ĞÅÏ¢")
+				.setTitle("onConsoleMessage1æç¤ºä¿¡æ¯")
 				.setMessage(consoleMessage.message())
 				.setPositiveButton("ok", new AlertDialog.OnClickListener() {
 					@Override

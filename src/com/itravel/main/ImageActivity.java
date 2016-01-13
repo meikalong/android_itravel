@@ -31,7 +31,7 @@ public class ImageActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.image_activity);
 		welcomeImg = (ImageView) this.findViewById(R.id.welcome_img);
 		AlphaAnimation anima = new AlphaAnimation(1.0f, 1.0f);
-		anima.setDuration(3000);// ÉèÖÃ¶¯»­ÏÔÊ¾Ê±¼ä
+		anima.setDuration(3000);// è®¾ç½®åŠ¨ç”»æ˜¾ç¤ºæ—¶é—´
 		welcomeImg.startAnimation(anima);
 		anima.setAnimationListener(new AnimationImpl());
 		et = (EditText) findViewById(R.id.ip);
@@ -63,7 +63,7 @@ public class ImageActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void onAnimationEnd(Animation animation) {
-			// skip(); // ¶¯»­½áÊøºóÌø×ªµ½±ğµÄÒ³Ãæ
+			// skip(); // åŠ¨ç”»ç»“æŸåè·³è½¬åˆ°åˆ«çš„é¡µé¢
 		}
 
 		@Override
@@ -88,7 +88,7 @@ public class ImageActivity extends Activity implements OnClickListener {
 				t.start();
 			}
 		} else {
-			showToast("IPµØÖ·²»ÕıÈ·»òÕßPing²»Í¨");
+			showToast("IPåœ°å€ä¸æ­£ç¡®æˆ–è€…Pingä¸é€š");
 		}
 	}
 

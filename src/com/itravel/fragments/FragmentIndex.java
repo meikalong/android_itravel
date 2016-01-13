@@ -18,7 +18,7 @@ import com.itravel.webview.MyWebViewClient;
 public class FragmentIndex extends Fragment {
 
 	private WebView webView;
-	// ·ÀÖ¹ÒòÎªÉúÃüÖÜÆÚµ¼ÖÂÒ³ÃæÖØ¸´¼ÓÔØ
+	// é˜²æ­¢å› ä¸ºç”Ÿå‘½å‘¨æœŸå¯¼è‡´é¡µé¢é‡å¤åŠ è½½
 	private boolean flag = false;
 
 	@Override
@@ -53,7 +53,7 @@ public class FragmentIndex extends Fragment {
 	}
 
 	/**
-	 * ´´½¨ÏÂÀ­Ë¢ĞÂ
+	 * åˆ›å»ºä¸‹æ‹‰åˆ·æ–°
 	 * 
 	 * @param inflater
 	 * @param container
@@ -70,7 +70,7 @@ public class FragmentIndex extends Fragment {
 				.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 					@Override
 					public void onRefresh() {
-						// ÖØĞÂË¢ĞÂÒ³Ãæ
+						// é‡æ–°åˆ·æ–°é¡µé¢
 						webView.loadUrl(webView.getUrl());
 					}
 				});
@@ -80,12 +80,12 @@ public class FragmentIndex extends Fragment {
 
 		webView = (WebView) view.findViewById(R.id.webView);
 
-		// ÉèÖÃ½ø¶ÈÌõ
+		// è®¾ç½®è¿›åº¦æ¡
 		webView.setWebChromeClient(new WebChromeClient() {
 			@Override
 			public void onProgressChanged(WebView view, int newProgress) {
 				if (newProgress == 100) {
-					// Òş²Ø½ø¶ÈÌõ
+					// éšè—è¿›åº¦æ¡
 					swipeLayout.setRefreshing(false);
 				} else {
 					if (!swipeLayout.isRefreshing())
@@ -101,7 +101,7 @@ public class FragmentIndex extends Fragment {
 	}
 
 	/**
-	 * ³õÊ¼»¯webView
+	 * åˆå§‹åŒ–webView
 	 */
 	private void initWebView() {
 		if (flag) {

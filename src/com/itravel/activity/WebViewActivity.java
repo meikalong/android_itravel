@@ -45,10 +45,10 @@ public class WebViewActivity extends Activity {
 	}
 
 	/**
-	 * ÉèÖÃActionBarµÄ²¼¾Ö
+	 * è®¾ç½®ActionBarçš„å¸ƒå±€
 	 * 
 	 * @param layoutId
-	 *            ²¼¾ÖId
+	 *            å¸ƒå±€Id
 	 * 
 	 * */
 	public void setActionBarLayout(int layoutId) {
@@ -68,7 +68,7 @@ public class WebViewActivity extends Activity {
 	}
 
 	/**
-	 * ÊµÏÖonClick·½·¨£¬ÔÚÕâÀïÃæ¼àÌıactionbarÖĞ°´Å¥µÄµã»÷ÊÂ¼ş
+	 * å®ç°onClickæ–¹æ³•ï¼Œåœ¨è¿™é‡Œé¢ç›‘å¬actionbarä¸­æŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
 	 * 
 	 * */
 	public void onClick(View v) {
@@ -83,7 +83,7 @@ public class WebViewActivity extends Activity {
 	}
 
 	/**
-	 * ÍË³ö½çÃæ
+	 * é€€å‡ºç•Œé¢
 	 */
 	private void exit() {
 		finish();

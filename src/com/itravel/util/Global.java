@@ -8,12 +8,12 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class Global {
-	public static boolean STATE;// trueÎª¿ª·¢ÕßÄ£Ê½£¬falseÎªÑİÊ¾Ä£Ê½
+	public static boolean STATE;// trueä¸ºå¼€å‘è€…æ¨¡å¼ï¼Œfalseä¸ºæ¼”ç¤ºæ¨¡å¼
 	public static String IP;
 	private static String servletName = null;
-	private static final int timeOut = 3000; // ³¬Ê±Ó¦¸ÃÔÚ3³®ÒÔÉÏ
+	private static final int timeOut = 3000; // è¶…æ—¶åº”è¯¥åœ¨3é’ä»¥ä¸Š
 
-	public static boolean isIp(String IP) {// ÅĞ¶ÏÊÇ·ñÊÇÒ»¸öIP
+	public static boolean isIp(String IP) {// åˆ¤æ–­æ˜¯å¦æ˜¯ä¸€ä¸ªIP
 		boolean b = false;
 		IP = trimSpaces(IP);
 		if (IP.matches("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}")) {
@@ -45,8 +45,8 @@ public class Global {
 		String resault = "";
 		Process p;
 		try {
-			// ping -c 3 -w 100 ÖĞ £¬-c ÊÇÖ¸pingµÄ´ÎÊı 3ÊÇÖ¸ping 3´Î £¬-w 100
-			// ÒÔÃëÎªµ¥Î»Ö¸¶¨³¬Ê±¼ä¸ô£¬ÊÇÖ¸³¬Ê±Ê±¼äÎª100Ãë
+			// ping -c 3 -w 100 ä¸­ ï¼Œ-c æ˜¯æŒ‡pingçš„æ¬¡æ•° 3æ˜¯æŒ‡ping 3æ¬¡ ï¼Œ-w 100
+			// ä»¥ç§’ä¸ºå•ä½æŒ‡å®šè¶…æ—¶é—´éš”ï¼Œæ˜¯æŒ‡è¶…æ—¶æ—¶é—´ä¸º100ç§’
 			p = Runtime.getRuntime().exec("ping -c 3 -w 100 " + str);
 			int status = p.waitFor();
 			InputStream input = p.getInputStream();
@@ -70,7 +70,7 @@ public class Global {
 		return resault;
 	}
 
-	private static String trimSpaces(String IP) {// È¥µôIP×Ö·û´®Ç°ºóËùÓĞµÄ¿Õ¸ñ
+	private static String trimSpaces(String IP) {// å»æ‰IPå­—ç¬¦ä¸²å‰åæ‰€æœ‰çš„ç©ºæ ¼
 		while (IP.startsWith(" ")) {
 			IP = IP.substring(1, IP.length()).trim();
 		}
@@ -81,7 +81,7 @@ public class Global {
 	}
 
 	/**
-	 * ×îºó·µ»Ø£ºhttp://192.168.0.100/itravel/
+	 * æœ€åè¿”å›ï¼šhttp://192.168.0.100/itravel/
 	 * 
 	 * @return
 	 */
@@ -93,11 +93,11 @@ public class Global {
 	}
 
 	/**
-	 * ×îºó·µ»Ø£º192.168.0.100:8080/itravel/Â·¾¶
+	 * æœ€åè¿”å›ï¼š192.168.0.100:8080/itravel/è·¯å¾„
 	 * 
 	 * @param url
-	 *            ÇëÇóÂ·¾¶ ÀıÈç£ºorder/second <br>
-	 *            ×îÇ°Ãæ²»ÒªÓĞĞ±¸Ü
+	 *            è¯·æ±‚è·¯å¾„ ä¾‹å¦‚ï¼šorder/second <br>
+	 *            æœ€å‰é¢ä¸è¦æœ‰æ–œæ 
 	 * @return
 	 */
 	public static String getServletName(String url) {

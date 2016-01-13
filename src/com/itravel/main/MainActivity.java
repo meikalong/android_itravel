@@ -22,24 +22,24 @@ import com.itravel.fragments.FragmentMine;
 import com.itravel.fragments.FragmentSort;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
-	// ¶¨ÒåFragmentÒ³Ãæ
+	// å®šä¹‰Fragmenté¡µé¢
 	private FragmentIndex fragmentIndex = new FragmentIndex();
 	private FragmentSort fragmentSort = new FragmentSort();
 	private FragmentFind fragmentFind = new FragmentFind();
 	private FragmentMine fragmentMine = new FragmentMine();
 	private Fragment currentFragment = null;
-	// ¶¨Òå²¼¾Ö¶ÔÏó
+	// å®šä¹‰å¸ƒå±€å¯¹è±¡
 	private FrameLayout indexFl, sortFl, findFl, mineFl;
 
-	// ¶¨ÒåÍ¼Æ¬×é¼ş¶ÔÏó
+	// å®šä¹‰å›¾ç‰‡ç»„ä»¶å¯¹è±¡
 	private ImageView indexIv, sortIv, findIv, mineIv;
 
-	// ¶¨ÒåÒ»¸ö±äÁ¿£¬À´±êÊ¶ÊÇ·ñÍË³ö
+	// å®šä¹‰ä¸€ä¸ªå˜é‡ï¼Œæ¥æ ‡è¯†æ˜¯å¦é€€å‡º
 	private static boolean isExit = false;
 
-	// °Ù¶ÈµØÍ¼
+	// ç™¾åº¦åœ°å›¾
 	private MyBaiduMap baiduMap;
-	// ¹ã²¥
+	// å¹¿æ’­
 	private BroadcastReceiver mReceiver;
 
 	@Override
@@ -86,7 +86,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * µã»÷ÊÂ¼ş
+	 * ç‚¹å‡»äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -107,16 +107,16 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * ³õÊ¼»¯×é¼ş
+	 * åˆå§‹åŒ–ç»„ä»¶
 	 */
 	private void initView() {
-		// ÊµÀı»¯²¼¾Ö¶ÔÏó
+		// å®ä¾‹åŒ–å¸ƒå±€å¯¹è±¡
 		indexFl = (FrameLayout) findViewById(R.id.layout_index);
 		sortFl = (FrameLayout) findViewById(R.id.layout_sort);
 		findFl = (FrameLayout) findViewById(R.id.layout_find);
 		mineFl = (FrameLayout) findViewById(R.id.layout_mine);
 
-		// ÊµÀı»¯Í¼Æ¬×é¼ş¶ÔÏó
+		// å®ä¾‹åŒ–å›¾ç‰‡ç»„ä»¶å¯¹è±¡
 		indexIv = (ImageView) findViewById(R.id.image_index);
 		sortIv = (ImageView) findViewById(R.id.image_sort);
 		findIv = (ImageView) findViewById(R.id.image_find);
@@ -125,10 +125,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * ³õÊ¼»¯Êı¾İ
+	 * åˆå§‹åŒ–æ•°æ®
 	 */
 	private void initData() {
-		// ¸ø²¼¾Ö¶ÔÏóÉèÖÃ¼àÌı
+		// ç»™å¸ƒå±€å¯¹è±¡è®¾ç½®ç›‘å¬
 		indexFl.setOnClickListener(this);
 		sortFl.setOnClickListener(this);
 		findFl.setOnClickListener(this);
@@ -137,7 +137,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * µã»÷ÁË¡°Ö÷Ò³¡±°´Å¥
+	 * ç‚¹å‡»äº†â€œä¸»é¡µâ€æŒ‰é’®
 	 */
 	private void clickIndexBtn() {
 		switchFragment(fragmentIndex);
@@ -148,7 +148,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * µã»÷ÁË¡°·ÖÀà¡±°´Å¥
+	 * ç‚¹å‡»äº†â€œåˆ†ç±»â€æŒ‰é’®
 	 */
 	private void clickSortBtn() {
 		switchFragment(fragmentSort);
@@ -160,7 +160,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * µã»÷ÁË¡°·¢ÏÖ¡±°´Å¥
+	 * ç‚¹å‡»äº†â€œå‘ç°â€æŒ‰é’®
 	 */
 	private void clickFindBtn() {
 		switchFragment(fragmentFind);
@@ -171,7 +171,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * µã»÷ÁË¡°ÎÒµÄ¡±°´Å¥
+	 * ç‚¹å‡»äº†â€œæˆ‘çš„â€æŒ‰é’®
 	 */
 	private void clickMineBtn() {
 		switchFragment(fragmentMine);
@@ -196,7 +196,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 
 	/**
-	 * ÇĞ»»fragment
+	 * åˆ‡æ¢fragment
 	 * 
 	 * @param to
 	 */
@@ -204,10 +204,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		if (currentFragment == to) {
 			return;
 		}
-		// µÃµ½FragmentÊÂÎñ¹ÜÀíÆ÷
+		// å¾—åˆ°Fragmentäº‹åŠ¡ç®¡ç†å™¨
 		FragmentTransaction fragmentTransaction = this
 				.getSupportFragmentManager().beginTransaction();
-		// Ìæ»»µ±Ç°µÄÒ³Ãæ
+		// æ›¿æ¢å½“å‰çš„é¡µé¢
 		if (currentFragment != null) {
 			fragmentTransaction.hide(currentFragment);
 		}
@@ -216,12 +216,12 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		} else {
 			fragmentTransaction.add(R.id.frame_content, to);
 		}
-		// ÊÂÎñ¹ÜÀíÌá½»
+		// äº‹åŠ¡ç®¡ç†æäº¤
 		fragmentTransaction.commit();
 		currentFragment = to;
 	}
 
-	/* ÍË³ö¹¦ÄÜ */
+	/* é€€å‡ºåŠŸèƒ½ */
 
 	private static Handler mHandler = new Handler() {
 
@@ -235,9 +235,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	private void exit() {
 		if (!isExit) {
 			isExit = true;
-			Toast.makeText(getApplicationContext(), "ÔÙ°´Ò»´ÎÍË³ö°®ÂÃĞĞ",
+			Toast.makeText(getApplicationContext(), "å†æŒ‰ä¸€æ¬¡é€€å‡ºçˆ±æ—…è¡Œ",
 					Toast.LENGTH_SHORT).show();
-			// ÀûÓÃhandlerÑÓ³Ù·¢ËÍ¸ü¸Ä×´Ì¬ĞÅÏ¢
+			// åˆ©ç”¨handlerå»¶è¿Ÿå‘é€æ›´æ”¹çŠ¶æ€ä¿¡æ¯
 			mHandler.sendEmptyMessageDelayed(0, 2000);
 		} else {
 			finish();

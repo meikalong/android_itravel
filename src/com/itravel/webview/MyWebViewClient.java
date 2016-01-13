@@ -15,10 +15,10 @@ import com.itravel.dialog.LoadingDialog;
 public class MyWebViewClient extends WebViewClient {
 	private Activity activity;
 
-	// ÌáÊ¾ĞÅÏ¢
+	// æç¤ºä¿¡æ¯
 	private LoadingDialog dialog;
 
-	// ÊÇ·ñÏÔÊ¾ÔÚµ±Ç°Ò³
+	// æ˜¯å¦æ˜¾ç¤ºåœ¨å½“å‰é¡µ
 	private boolean currentActivity;
 	private boolean ifDialog;
 
@@ -37,9 +37,9 @@ public class MyWebViewClient extends WebViewClient {
 	/**
 	 * @param activity
 	 * @param currentActivity
-	 *            ÊÇ·ñÔÚµ±Ç°activityÖĞÏÔÊ¾
+	 *            æ˜¯å¦åœ¨å½“å‰activityä¸­æ˜¾ç¤º
 	 * @param ifDialog
-	 *            ÊÇ·ñÏÔÊ¾¶Ô»°¿ò
+	 *            æ˜¯å¦æ˜¾ç¤ºå¯¹è¯æ¡†
 	 */
 	private void myWebViewClient(Activity activity, boolean currentActivity,
 			boolean ifDialog) {
@@ -50,19 +50,19 @@ public class MyWebViewClient extends WebViewClient {
 
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
 
-		if (url.contains("iframepage")) {// iframepageÀïÃæµÄÒ³ÃæÊÇiframeÒıÓÃµÄÒ³Ãæ
+		if (url.contains("iframepage")) {// iframepageé‡Œé¢çš„é¡µé¢æ˜¯iframeå¼•ç”¨çš„é¡µé¢
 			return false;
 		}
 
 		if (!currentActivity) {
 			Intent intent = new Intent();
-			// µÚÒ»²ÎÊıÈ¡µÄÊÇÕâ¸öÓ¦ÓÃ³ÌĞòµÄactivity£¬ÉúÃüÖÜÆÚÊÇÕû¸öÓ¦ÓÃ
-			// µÚ¶ş¸ö²ÎÊıÊÇÒªÌø×ªµÄÒ³ÃæµÄÈ«Â·¾¶
+			// ç¬¬ä¸€å‚æ•°å–çš„æ˜¯è¿™ä¸ªåº”ç”¨ç¨‹åºçš„activityï¼Œç”Ÿå‘½å‘¨æœŸæ˜¯æ•´ä¸ªåº”ç”¨
+			// ç¬¬äºŒä¸ªå‚æ•°æ˜¯è¦è·³è½¬çš„é¡µé¢çš„å…¨è·¯å¾„
 			intent.setClassName(activity, WebViewActivity.class.getName());
-			// BundleÀàÓÃ×÷Ğ¯´øÊı¾İ£¬ËüÀàËÆÓÚMap£¬ÓÃÓÚ´æ·Åkey-valueÃûÖµ¶ÔĞÎÊ½µÄÖµ
+			// Bundleç±»ç”¨ä½œæºå¸¦æ•°æ®ï¼Œå®ƒç±»ä¼¼äºMapï¼Œç”¨äºå­˜æ”¾key-valueåå€¼å¯¹å½¢å¼çš„å€¼
 			Bundle b = new Bundle();
 			b.putString("url", url);
-			// ´Ë´¦Ê¹ÓÃputExtras£¬½ÓÊÜ·½¾ÍÏìÓ¦µÄÊ¹ÓÃgetExtra
+			// æ­¤å¤„ä½¿ç”¨putExtrasï¼Œæ¥å—æ–¹å°±å“åº”çš„ä½¿ç”¨getExtra
 			intent.putExtras(b);
 			activity.startActivity(intent);
 			activity.overridePendingTransition(R.anim.myslide_in_right,
@@ -73,23 +73,23 @@ public class MyWebViewClient extends WebViewClient {
 		return true;
 	}
 
-	// ¿ªÊ¼¼ÓÔØÍøÒ³Ê±Òª×öµÄ¹¤×÷
+	// å¼€å§‹åŠ è½½ç½‘é¡µæ—¶è¦åšçš„å·¥ä½œ
 	public void onPageStarted(WebView webView, String url, Bitmap favicon) {
 		System.out.println("onPageStarted>>>>>>>>>>>>>>>url:>>>" + url);
 		showDialog(ifDialog);
 	}
 
-	// ¼ÓÔØÍê³ÉÊ±Òª×öµÄ¹¤×÷
+	// åŠ è½½å®Œæˆæ—¶è¦åšçš„å·¥ä½œ
 	public void onPageFinished(WebView view, String url) {
 		System.out.println("onPageFinished>>>>>>>>>>>>>>>url:>>>" + url);
 		cancleDialog();
 	}
 
-	// ¼ÓÔØ´íÎóÊ±Òª×öµÄ¹¤×÷
+	// åŠ è½½é”™è¯¯æ—¶è¦åšçš„å·¥ä½œ
 	public void onReceivedError(WebView view, int errorCode,
 			String description, String failingUrl) {
 		cancleDialog();
-		Toast.makeText(activity, errorCode + "£º" + description,
+		Toast.makeText(activity, errorCode + "ï¼š" + description,
 				Toast.LENGTH_LONG).show();
 	}
 
@@ -108,7 +108,7 @@ public class MyWebViewClient extends WebViewClient {
 		}
 	}
 
-	// À¹½ØÇëÇó£¬¼ÓÔØ±¾µØ¾²Ì¬ÎÄ¼ş£¬ÀıÈç¼ÓÔØ±¾µØjsÎÄ¼ş»òÕßcssÎÄ¼ş£¬¼Ó¿ìÒ³Ãæ¼ÓÔØËÙ¶È
+	// æ‹¦æˆªè¯·æ±‚ï¼ŒåŠ è½½æœ¬åœ°é™æ€æ–‡ä»¶ï¼Œä¾‹å¦‚åŠ è½½æœ¬åœ°jsæ–‡ä»¶æˆ–è€…cssæ–‡ä»¶ï¼ŒåŠ å¿«é¡µé¢åŠ è½½é€Ÿåº¦
 	// @Override
 	// public WebResourceResponse shouldInterceptRequest(WebView view,
 	// String url) {

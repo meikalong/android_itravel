@@ -13,8 +13,8 @@ import com.baidu.mapapi.SDKInitializer;
 import com.itravel.baidumap.service.LocationService;
 
 /***
- * µ¥µã¶¨Î»Ê¾Àı£¬ÓÃÀ´Õ¹Ê¾»ù±¾µÄ¶¨Î»½á¹û£¬ÅäÖÃÔÚLocationService.javaÖĞ Ä¬ÈÏÅäÖÃÒ²¿ÉÒÔÔÚLocationServiceÖĞĞŞ¸Ä
- * Ä¬ÈÏÅäÖÃµÄÄÚÈİ×ÔÓÚ¿ª·¢ÕßÂÛÌ³ÖĞ¶Ô¿ª·¢Õß³¤ÆÚÌá³öµÄÒÉÎÊÄÚÈİ
+ * å•ç‚¹å®šä½ç¤ºä¾‹ï¼Œç”¨æ¥å±•ç¤ºåŸºæœ¬çš„å®šä½ç»“æœï¼Œé…ç½®åœ¨LocationService.javaä¸­ é»˜è®¤é…ç½®ä¹Ÿå¯ä»¥åœ¨LocationServiceä¸­ä¿®æ”¹
+ * é»˜è®¤é…ç½®çš„å†…å®¹è‡ªäºå¼€å‘è€…è®ºå›ä¸­å¯¹å¼€å‘è€…é•¿æœŸæå‡ºçš„ç–‘é—®å†…å®¹
  * 
  * @author baidu
  *
@@ -30,20 +30,20 @@ public class MyBaiduMap {
 	 * Stop location service
 	 */
 	public void onStop() {
-		locationService.unregisterListener(mListener); // ×¢Ïúµô¼àÌı
-		locationService.stop(); // Í£Ö¹¶¨Î»·şÎñ
+		locationService.unregisterListener(mListener); // æ³¨é”€æ‰ç›‘å¬
+		locationService.stop(); // åœæ­¢å®šä½æœåŠ¡
 	}
 
 	public void onStart() {
-		// »ñÈ¡locationserviceÊµÀı£¬½¨ÒéÓ¦ÓÃÖĞÖ»³õÊ¼»¯1¸ölocationÊµÀı£¬È»ºóÊ¹ÓÃ£¬¿ÉÒÔ²Î¿¼ÆäËûÊ¾ÀıµÄactivity£¬¶¼ÊÇÍ¨¹ı´ËÖÖ·½Ê½»ñÈ¡locationserviceÊµÀıµÄ
+		// è·å–locationserviceå®ä¾‹ï¼Œå»ºè®®åº”ç”¨ä¸­åªåˆå§‹åŒ–1ä¸ªlocationå®ä¾‹ï¼Œç„¶åä½¿ç”¨ï¼Œå¯ä»¥å‚è€ƒå…¶ä»–ç¤ºä¾‹çš„activityï¼Œéƒ½æ˜¯é€šè¿‡æ­¤ç§æ–¹å¼è·å–locationserviceå®ä¾‹çš„
 		locationService.registerListener(mListener);
-		// ×¢²á¼àÌı
+		// æ³¨å†Œç›‘å¬
 		locationService.start();
 	}
 
 	/*****
 	 * @see copy funtion to you project
-	 *      ¶¨Î»½á¹û»Øµ÷£¬ÖØĞ´onReceiveLocation·½·¨£¬¿ÉÒÔÖ±½Ó¿½±´ÈçÏÂ´úÂëµ½×Ô¼º¹¤³ÌÖĞĞŞ¸Ä
+	 *      å®šä½ç»“æœå›è°ƒï¼Œé‡å†™onReceiveLocationæ–¹æ³•ï¼Œå¯ä»¥ç›´æ¥æ‹·è´å¦‚ä¸‹ä»£ç åˆ°è‡ªå·±å·¥ç¨‹ä¸­ä¿®æ”¹
 	 *
 	 */
 	private BDLocationListener mListener = new BDLocationListener() {
@@ -55,8 +55,8 @@ public class MyBaiduMap {
 				StringBuffer sb = new StringBuffer(256);
 				sb.append("time : ");
 				/**
-				 * Ê±¼äÒ²¿ÉÒÔÊ¹ÓÃsystemClock.elapsedRealtime()·½·¨ »ñÈ¡µÄÊÇ×Ô´Ó¿ª»úÒÔÀ´£¬Ã¿´Î»Øµ÷µÄÊ±¼ä£»
-				 * location.getTime() ÊÇÖ¸·şÎñ¶Ë³ö±¾´Î½á¹ûµÄÊ±¼ä£¬Èç¹ûÎ»ÖÃ²»·¢Éú±ä»¯£¬ÔòÊ±¼ä²»±ä
+				 * æ—¶é—´ä¹Ÿå¯ä»¥ä½¿ç”¨systemClock.elapsedRealtime()æ–¹æ³• è·å–çš„æ˜¯è‡ªä»å¼€æœºä»¥æ¥ï¼Œæ¯æ¬¡å›è°ƒçš„æ—¶é—´ï¼›
+				 * location.getTime() æ˜¯æŒ‡æœåŠ¡ç«¯å‡ºæœ¬æ¬¡ç»“æœçš„æ—¶é—´ï¼Œå¦‚æœä½ç½®ä¸å‘ç”Ÿå˜åŒ–ï¼Œåˆ™æ—¶é—´ä¸å˜
 				 */
 				sb.append(location.getTime());
 				sb.append("\nerror code : ");
@@ -93,33 +93,33 @@ public class MyBaiduMap {
 						sb.append(poi.getName() + ";");
 					}
 				}
-				if (location.getLocType() == BDLocation.TypeGpsLocation) {// GPS¶¨Î»½á¹û
+				if (location.getLocType() == BDLocation.TypeGpsLocation) {// GPSå®šä½ç»“æœ
 					sb.append("\nspeed : ");
-					sb.append(location.getSpeed());// µ¥Î»£ºkm/h
+					sb.append(location.getSpeed());// å•ä½ï¼škm/h
 					sb.append("\nsatellite : ");
 					sb.append(location.getSatelliteNumber());
 					sb.append("\nheight : ");
-					sb.append(location.getAltitude());// µ¥Î»£ºÃ×
+					sb.append(location.getAltitude());// å•ä½ï¼šç±³
 					sb.append("\ndescribe : ");
-					sb.append("gps¶¨Î»³É¹¦");
-				} else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {// ÍøÂç¶¨Î»½á¹û
-					// ÔËÓªÉÌĞÅÏ¢
+					sb.append("gpså®šä½æˆåŠŸ");
+				} else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {// ç½‘ç»œå®šä½ç»“æœ
+					// è¿è¥å•†ä¿¡æ¯
 					sb.append("\noperationers : ");
 					sb.append(location.getOperators());
 					sb.append("\ndescribe : ");
-					sb.append("ÍøÂç¶¨Î»³É¹¦");
-				} else if (location.getLocType() == BDLocation.TypeOffLineLocation) {// ÀëÏß¶¨Î»½á¹û
+					sb.append("ç½‘ç»œå®šä½æˆåŠŸ");
+				} else if (location.getLocType() == BDLocation.TypeOffLineLocation) {// ç¦»çº¿å®šä½ç»“æœ
 					sb.append("\ndescribe : ");
-					sb.append("ÀëÏß¶¨Î»³É¹¦£¬ÀëÏß¶¨Î»½á¹ûÒ²ÊÇÓĞĞ§µÄ");
+					sb.append("ç¦»çº¿å®šä½æˆåŠŸï¼Œç¦»çº¿å®šä½ç»“æœä¹Ÿæ˜¯æœ‰æ•ˆçš„");
 				} else if (location.getLocType() == BDLocation.TypeServerError) {
 					sb.append("\ndescribe : ");
-					sb.append("·şÎñ¶ËÍøÂç¶¨Î»Ê§°Ü£¬¿ÉÒÔ·´À¡IMEIºÅºÍ´óÌå¶¨Î»Ê±¼äµ½loc-bugs@baidu.com£¬»áÓĞÈË×·²éÔ­Òò");
+					sb.append("æœåŠ¡ç«¯ç½‘ç»œå®šä½å¤±è´¥ï¼Œå¯ä»¥åé¦ˆIMEIå·å’Œå¤§ä½“å®šä½æ—¶é—´åˆ°loc-bugs@baidu.comï¼Œä¼šæœ‰äººè¿½æŸ¥åŸå› ");
 				} else if (location.getLocType() == BDLocation.TypeNetWorkException) {
 					sb.append("\ndescribe : ");
-					sb.append("ÍøÂç²»Í¬µ¼ÖÂ¶¨Î»Ê§°Ü£¬Çë¼ì²éÍøÂçÊÇ·ñÍ¨³©");
+					sb.append("ç½‘ç»œä¸åŒå¯¼è‡´å®šä½å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œæ˜¯å¦é€šç•…");
 				} else if (location.getLocType() == BDLocation.TypeCriteriaException) {
 					sb.append("\ndescribe : ");
-					sb.append("ÎŞ·¨»ñÈ¡ÓĞĞ§¶¨Î»ÒÀ¾İµ¼ÖÂ¶¨Î»Ê§°Ü£¬Ò»°ãÊÇÓÉÓÚÊÖ»úµÄÔ­Òò£¬´¦ÓÚ·ÉĞĞÄ£Ê½ÏÂÒ»°ã»áÔì³ÉÕâÖÖ½á¹û£¬¿ÉÒÔÊÔ×ÅÖØÆôÊÖ»ú");
+					sb.append("æ— æ³•è·å–æœ‰æ•ˆå®šä½ä¾æ®å¯¼è‡´å®šä½å¤±è´¥ï¼Œä¸€èˆ¬æ˜¯ç”±äºæ‰‹æœºçš„åŸå› ï¼Œå¤„äºé£è¡Œæ¨¡å¼ä¸‹ä¸€èˆ¬ä¼šé€ æˆè¿™ç§ç»“æœï¼Œå¯ä»¥è¯•ç€é‡å¯æ‰‹æœº");
 				}
 				// System.out.println("KKKKKKKKKKKKK" + sb.toString());
 				if ("161".equals(location.getLocType())) {
@@ -143,8 +143,8 @@ public class MyBaiduMap {
 	}
 
 	/**
-	 * ¹¹Ôì¹ã²¥¼àÌıÀà£¬¼àÌı SDK key ÑéÖ¤ÒÔ¼°ÍøÂçÒì³£¹ã²¥
-	 * Ã¿´Î´ò¿ªÈí¼şµÄÊ±ºòÑéÖ¤Ò»ÏÂ£¬Èç¹ûÈí¼şÃ»ÓĞÍêÈ«¹Ø±Õ£¨ÕâÀïÖ¸µÄÍêÈ«¹Ø±ÕÊÇ±»ÇåÀíÈí¼şkillµô£©£¬ÊÇ²»»áÔÙ´ÎĞ£ÑéµÄ
+	 * æ„é€ å¹¿æ’­ç›‘å¬ç±»ï¼Œç›‘å¬ SDK key éªŒè¯ä»¥åŠç½‘ç»œå¼‚å¸¸å¹¿æ’­
+	 * æ¯æ¬¡æ‰“å¼€è½¯ä»¶çš„æ—¶å€™éªŒè¯ä¸€ä¸‹ï¼Œå¦‚æœè½¯ä»¶æ²¡æœ‰å®Œå…¨å…³é—­ï¼ˆè¿™é‡ŒæŒ‡çš„å®Œå…¨å…³é—­æ˜¯è¢«æ¸…ç†è½¯ä»¶killæ‰ï¼‰ï¼Œæ˜¯ä¸ä¼šå†æ¬¡æ ¡éªŒçš„
 	 */
 	public class SDKReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
@@ -152,15 +152,15 @@ public class MyBaiduMap {
 			System.out.println("MMMMMMMMMMMMMMMMM   action: " + s);
 			if (s.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR)) {
 				Toast.makeText(context,
-						"key ÑéÖ¤³ö´í! ÇëÔÚ AndroidManifest.xml ÎÄ¼şÖĞ¼ì²é key ÉèÖÃ",
+						"key éªŒè¯å‡ºé”™! è¯·åœ¨ AndroidManifest.xml æ–‡ä»¶ä¸­æ£€æŸ¥ key è®¾ç½®",
 						Toast.LENGTH_LONG).show();
 			} else if (s
 					.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_OK)) {
-				Toast.makeText(context, "key ÑéÖ¤³É¹¦! ¹¦ÄÜ¿ÉÒÔÕı³£Ê¹ÓÃ", Toast.LENGTH_LONG)
+				Toast.makeText(context, "key éªŒè¯æˆåŠŸ! åŠŸèƒ½å¯ä»¥æ­£å¸¸ä½¿ç”¨", Toast.LENGTH_LONG)
 						.show();
 			} else if (s
 					.equals(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR)) {
-				Toast.makeText(context, "ÍøÂç³ö´í", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, "ç½‘ç»œå‡ºé”™", Toast.LENGTH_LONG).show();
 			}
 		}
 	}

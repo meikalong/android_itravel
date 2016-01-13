@@ -37,7 +37,7 @@ public class FragmentSort extends Fragment {
 			webView.loadUrl(Global.getServletName("travel/sort"));
 		} else {
 			Toast.makeText(getActivity(),
-					"×¢Òâ:±¾À¸Ä¿ÔÚÑİÊ¾Ä£Ê½ÏÂ£¬²¿·Ö¹¦ÄÜ²»ÄÜÕı³£Ê¹ÓÃ£¬¸ü¶àìÅ¿á¹¦ÄÜÇëÊ¹ÓÃ¿ª·¢Ä£Ê½", Toast.LENGTH_LONG)
+					"æ³¨æ„:æœ¬æ ç›®åœ¨æ¼”ç¤ºæ¨¡å¼ä¸‹ï¼Œéƒ¨åˆ†åŠŸèƒ½ä¸èƒ½æ­£å¸¸ä½¿ç”¨ï¼Œæ›´å¤šç‚«é…·åŠŸèƒ½è¯·ä½¿ç”¨å¼€å‘æ¨¡å¼", Toast.LENGTH_LONG)
 					.show();
 			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/sort/index.html");
 		}
