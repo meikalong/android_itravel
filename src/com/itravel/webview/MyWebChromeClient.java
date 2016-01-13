@@ -3,6 +3,7 @@ package com.itravel.webview;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.os.Message;
 import android.webkit.ConsoleMessage;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -37,6 +38,19 @@ public class MyWebChromeClient extends WebChromeClient {
 		super.onReceivedTitle(view, title);
 		TextView tv = (TextView) activity.findViewById(R.id.title);
 		tv.setText(title);
+	}
+
+	@Override
+	public boolean onCreateWindow(WebView view, boolean isDialog,
+			boolean isUserGesture, Message resultMsg) {
+		System.out.println(">>>>>>>>>>>>>>>onCreateWindow");
+		return super.onCreateWindow(view, false, isUserGesture, resultMsg);
+	}
+
+	@Override
+	public void onCloseWindow(WebView window) {
+		super.onCloseWindow(window);
+		activity.finish();
 	}
 
 	@Override

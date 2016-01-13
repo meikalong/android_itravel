@@ -49,7 +49,8 @@ public class MyWebViewClient extends WebViewClient {
 	private void myWebViewClient(Activity activity, boolean currentActivity,
 			boolean ifDialog, WebView webView) {
 		this.activity = activity;
-		this.currentActivity = currentActivity;
+		// this.currentActivity = currentActivity;
+		this.currentActivity = false;
 		this.ifDialog = ifDialog;
 		WebSettings setting = webView.getSettings();
 		setting.setJavaScriptEnabled(true);
