@@ -36,8 +36,7 @@ public class FragmentFind extends Fragment {
 		} else {
 			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/find/index.html");
 		}
-		webView.setWebViewClient(new MyWebViewClient(getActivity()));
-		webView.getSettings().setJavaScriptEnabled(true);
+		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView));
 
 		flag = true;
 	}

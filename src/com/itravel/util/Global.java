@@ -14,7 +14,7 @@ public class Global {
 	private static final int timeOut = 3000; // 超时应该在3钞以上
 
 	public static boolean isIp(String IP) {// 判断是否是一个IP
-		boolean b = false;
+		boolean b = true;
 		IP = trimSpaces(IP);
 		if (IP.matches("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}")) {
 			String s[] = IP.split("\\.");
@@ -24,8 +24,7 @@ public class Global {
 						if (Integer.parseInt(s[3]) < 255)
 							b = true;
 		}
-		// return b;
-		return true;
+		return b;
 	}
 
 	public static boolean isPing(String ip) {

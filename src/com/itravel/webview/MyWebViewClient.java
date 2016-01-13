@@ -1,9 +1,11 @@
 package com.itravel.webview;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -22,16 +24,17 @@ public class MyWebViewClient extends WebViewClient {
 	private boolean currentActivity;
 	private boolean ifDialog;
 
-	public MyWebViewClient(Activity activity) {
-		myWebViewClient(activity, false, true);
+	public MyWebViewClient(Activity activity, WebView webView) {
+		myWebViewClient(activity, false, true, webView);
 	}
 
-	public MyWebViewClient(Activity activity, boolean currentActivity) {
-		myWebViewClient(activity, currentActivity, true);
+	public MyWebViewClient(Activity activity, boolean currentActivity,
+			WebView webView) {
+		myWebViewClient(activity, currentActivity, true, webView);
 	}
 
-	public MyWebViewClient(boolean ifDialog, Activity activity) {
-		myWebViewClient(activity, false, ifDialog);
+	public MyWebViewClient(boolean ifDialog, Activity activity, WebView webView) {
+		myWebViewClient(activity, false, ifDialog, webView);
 	}
 
 	/**
@@ -41,11 +44,18 @@ public class MyWebViewClient extends WebViewClient {
 	 * @param ifDialog
 	 *            是否显示对话框
 	 */
+	@SuppressWarnings("deprecation")
+	@SuppressLint("SetJavaScriptEnabled")
 	private void myWebViewClient(Activity activity, boolean currentActivity,
-			boolean ifDialog) {
+			boolean ifDialog, WebView webView) {
 		this.activity = activity;
 		this.currentActivity = currentActivity;
 		this.ifDialog = ifDialog;
+		WebSettings setting = webView.getSettings();
+		setting.setJavaScriptEnabled(true);
+		setting.setCacheMode(WebSettings.LOAD_NO_CACHE);
+		setting.setSaveFormData(false);
+		setting.setSavePassword(false);
 	}
 
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {

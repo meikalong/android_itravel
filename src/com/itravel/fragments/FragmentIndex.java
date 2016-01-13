@@ -12,7 +12,6 @@ import android.webkit.WebView;
 
 import com.itravel.R;
 import com.itravel.util.Global;
-import com.itravel.util.WebViewUtil;
 import com.itravel.webview.MyWebViewClient;
 
 public class FragmentIndex extends Fragment {
@@ -108,13 +107,13 @@ public class FragmentIndex extends Fragment {
 			return;
 		}
 		webView = (WebView) getView().findViewById(R.id.webView);
-		webView.setWebViewClient(new MyWebViewClient(false, getActivity()));
+		webView.setWebViewClient(new MyWebViewClient(false, getActivity(),
+				webView));
 		if (Global.STATE) {
 			webView.loadUrl(Global.getServletName(""));
 		} else {
 			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/index/index.html");
 		}
-		WebViewUtil.setJavaScriptEnabled(webView);
 		flag = true;
 	}
 

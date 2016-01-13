@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -42,11 +41,8 @@ public class FragmentSort extends Fragment {
 					.show();
 			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/sort/index.html");
 		}
-		webView.setWebViewClient(new MyWebViewClient(getActivity()));
+		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView));
 		webView.setWebChromeClient(new MyWebChromeClient(getActivity(), false));
-		WebSettings setting = webView.getSettings();
-		setting.setJavaScriptEnabled(true);
-		setting.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
 		flag = true;
 	}

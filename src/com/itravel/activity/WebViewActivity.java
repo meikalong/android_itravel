@@ -28,11 +28,10 @@ public class WebViewActivity extends Activity {
 		Intent intent = getIntent();
 		webView = (WebView) findViewById(R.id.webView);
 
-		webView.setWebViewClient(new MyWebViewClient(this));
+		webView.setWebViewClient(new MyWebViewClient(this, webView));
 		webView.setWebChromeClient(new MyWebChromeClient(this));
 		webView.loadUrl(intent.getStringExtra("url"));
 
-		webView.getSettings().setJavaScriptEnabled(true);
 	}
 
 	@Override
