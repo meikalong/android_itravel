@@ -79,7 +79,6 @@ public class ImageActivity extends Activity implements OnClickListener {
 			if (Global.isIp(ip)) {
 				Thread t = new Thread(new Runnable() {
 					public void run() {
-						Global.isPing(ip);
 						Global.STATE = true;
 						Global.IP = ip;
 						skip();
