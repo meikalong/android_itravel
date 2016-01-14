@@ -3,7 +3,14 @@ package com.itravel.util;
 public class Global {
 	public static boolean STATE;// true为开发者模式，false为演示模式
 	public static String IP;
-	public static String urlContent = "static/mobile/";
+	public static final String urlContent = "static/mobile/";
+	public static final String urlCss = ".css";
+	public static final String urlJs = ".js";
+	public static final String urlPng = ".png";
+	public static final String mimeTypeJs = "application/javascript";
+	public static final String mimeTypeCss = "text/css";
+	public static final String mimeTypeImg = "image/png";
+	public static final String character = "UTF-8";
 	private static String servletName = null;
 
 	/**

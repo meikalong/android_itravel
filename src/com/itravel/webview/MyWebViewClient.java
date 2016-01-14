@@ -1,6 +1,7 @@
 package com.itravel.webview;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -125,25 +126,63 @@ public class MyWebViewClient extends WebViewClient {
 	@Override
 	public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
 		WebResourceResponse response = null;
-		// if里面有个方法
-		if (url.contains(Global.urlContent)) {
+
+		if (checkUrlForIntercept(url)) {
 			AssetManager assetManager = null;
+			InputStream inputStream = null;
 			try {
 				assetManager = activity.getAssets();
-				// image/png换成方法
-				// UTF-8换成全局静态变量
-				// open里面的路径换成方法
-				response = new WebResourceResponse("image/png", "UTF-8",
-						assetManager.open("icon.png"));
+				String type = getMimeType(url);
+				String path = getFilePath(url);
+				inputStream = assetManager.open(path);
+				response = new WebResourceResponse(type, Global.character, inputStream);
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally {
-				if (assetManager != null) {
-					assetManager.close();
+				if (inputStream != null) {
+					try {
+						inputStream.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		}
 		return response;
 	}
 
+	private boolean checkUrlForIntercept(String url) {
+		boolean flag = false;
+		if (!url.contains(Global.urlContent)) {
+			return flag;
+		}
+		int css = url.lastIndexOf(Global.urlCss);
+		int js = url.lastIndexOf(Global.urlJs);
+		int urlpng = url.lastIndexOf(Global.urlPng);
+		if (css != -1 || js != -1 || urlpng != -1) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	private String getMimeType(String url) {
+		int css = url.lastIndexOf(Global.urlCss);
+		int js = url.lastIndexOf(Global.urlJs);
+		int urlpng = url.lastIndexOf(Global.urlPng);
+		if (css != -1) {
+			return Global.mimeTypeCss;
+		} else if (js != -1) {
+			return Global.mimeTypeJs;
+		} else if (urlpng != -1) {
+			return Global.mimeTypeImg;
+		}
+		return "text/html;charset=UTF-8";
+	}
+
+	private String getFilePath(String url) {
+		int start = url.indexOf(Global.urlContent) + Global.urlContent.length();
+		int end = url.length();
+
+		return url.substring(start, end);
+	}
 }
