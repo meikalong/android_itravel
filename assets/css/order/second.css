@@ -1,0 +1,52 @@
+.column:before, .column .man:before, .column .control:before, .order-bottom:before, .column:after, .column .man:after, .column .control:after, .order-bottom:after { display: table; content: ""; clear: both; }
+
+body { padding-bottom: 60px; }
+
+.top { background-color: #F0F0F0; padding: 4% 0px; text-align: center; color: #353535; font-weight: bolder; }
+@media (min-width: 300px) { .top { font-size: 16px; } }
+@media (min-width: 350px) { .top { font-size: 17px; } }
+@media (min-width: 400px) { .top { font-size: 18px; } }
+@media (min-width: 450px) { .top { font-size: 19px; } }
+@media (min-width: 500px) { .top { font-size: 20px; } }
+.top p { width: 90%; }
+.top .arrow { color: #33BD61; padding: 0px 5%; opacity: 0.5; }
+@media (min-width: 300px) { .top .arrow { font-size: 12px; } }
+@media (min-width: 350px) { .top .arrow { font-size: 13px; } }
+@media (min-width: 400px) { .top .arrow { font-size: 14px; } }
+@media (min-width: 450px) { .top .arrow { font-size: 15px; } }
+@media (min-width: 500px) { .top .arrow { font-size: 16px; } }
+.top .arrow:active { opacity: 1; }
+
+.date { table-layout: fixed; }
+.date td { color: #999999; font-weight: bolder; width: 100%; }
+.date td p { padding: 10px 0px; }
+.date td .enable { color: #333333; }
+.date td .enable p { padding: 0px; }
+.date td .price { color: #FF7D71; font-weight: normal; }
+.date th { background-color: #E4E4E4; border: 1px solid #E4E4E4; color: #666666; }
+.date th, .date td { text-align: center; }
+.date .select { background-color: #FF7D71; }
+.date .select .price { color: #fff; }
+
+.column { font-size: 16px; }
+.column .sort { padding: 4% 0px; color: #333333; font-weight: bolder; }
+.column .man { padding-left: 2%; }
+.column .control { background-color: #33BD61; display: table; margin-top: 3%; margin-right: 3%; float: right; height: auto; }
+.column .num { height: 30px; padding-top: 7px; }
+@media (min-width: 300px) { .column .num { font-size: 15px; } }
+@media (min-width: 350px) { .column .num { font-size: 16px; } }
+@media (min-width: 400px) { .column .num { font-size: 17px; } }
+@media (min-width: 450px) { .column .num { font-size: 18px; } }
+@media (min-width: 500px) { .column .num { font-size: 19px; } }
+.column .num p { color: #fff; }
+.column .change { line-height: 0.7; background-color: #fff; color: #33BD61; font-size: 40px; margin: 2px; }
+.column .change, .column .control { border-radius: 2px; }
+.column .num, .column .change { display: inherit; width: 30px; float: left; text-align: center; height: 30px; }
+.column .disabled { color: #ccc; }
+
+.order-bottom { max-width: 600px; height: 50px; position: fixed; bottom: 0px; left: 0px; }
+.order-bottom .pre-order { background-color: #fff; height: 50px; color: #FF7D71; border-top: 1px solid #ccc; }
+.order-bottom .order { background-color: #FF7467; opacity: 1; height: 50px; text-align: center; display: block; color: #fff; font-size: 20px; }
+.order-bottom .text-middle { height: 100%; text-align: center; }
+.order-bottom .text-middle .total { font-size: 15px; }
+.order-bottom .text-middle .price { font-size: 20px; font-weight: bolder; }

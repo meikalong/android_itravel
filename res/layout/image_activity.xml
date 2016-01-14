@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="123dp"
-        android:text="192.168.0.103:8080"
+        android:text="10.58.21.210:8080"
         android:hint="请输入服务器的IP地址" >
 
     </EditText>

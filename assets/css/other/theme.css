@@ -1,0 +1,14 @@
+.column { padding: 3%; }
+.column .title { color: #4FABF1; text-align: center; padding-bottom: 5%; }
+@media (min-width: 300px) { .column .title { font-size: 15px; } }
+@media (min-width: 350px) { .column .title { font-size: 17px; } }
+@media (min-width: 400px) { .column .title { font-size: 19px; } }
+@media (min-width: 450px) { .column .title { font-size: 21px; } }
+@media (min-width: 500px) { .column .title { font-size: 23px; } }
+.column .msg { line-height: 1.5; color: #919394; }
+@media (min-width: 300px) { .column .msg { font-size: 14px; } }
+@media (min-width: 350px) { .column .msg { font-size: 15px; } }
+@media (min-width: 400px) { .column .msg { font-size: 16px; } }
+@media (min-width: 450px) { .column .msg { font-size: 17px; } }
+@media (min-width: 500px) { .column .msg { font-size: 18px; } }
+

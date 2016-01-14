@@ -1,0 +1,28 @@
+.top { position: relative; display: table; }
+.top .bk { max-height: 200px; }
+.top .head { position: absolute; left: 0px; right: 0px; bottom: 0px; top: 0px; width: 100%; height: 100%; margin: auto; color: #fff; text-align: center; display: inherit; line-height: 3; }
+.top .head .img { display: block; margin: 0 auto; width: 20%; }
+
+@media (min-width: 300px) { .head, .column { font-size: 15px; } }
+@media (min-width: 350px) { .head, .column { font-size: 17px; } }
+@media (min-width: 400px) { .head, .column { font-size: 19px; } }
+@media (min-width: 450px) { .head, .column { font-size: 21px; } }
+@media (min-width: 500px) { .head, .column { font-size: 23px; } }
+
+.column li a { height: 5%; padding: 12px 10px; background-repeat: no-repeat; background-size: 10%; background-position-x: 4%; background-position-y: center; }
+
+@media (min-width: 300px) { .column li a { padding-left: 54px; } }
+@media (min-width: 350px) { .column li a { padding-left: 61px; } }
+@media (min-width: 400px) { .column li a { padding-left: 68px; } }
+@media (min-width: 450px) { .column li a { padding-left: 75px; } }
+@media (min-width: 500px) { .column li a { padding-left: 82px; } }
+
+.order { background-image: url("../../img/mine/order.png"); }
+
+.like { background-image: url("../../img/mine/like.png"); }
+
+.safety { background-image: url("../../img/mine/safety.png"); }
+
+.photo { background-image: url("../../img/mine/photo.png"); }
+
+.loginout { font-size: 15px; background-color: #FC3838; padding: 10px  0px; text-align: center; margin: 20px 0px; color: #fff; font-weight: bolder; }

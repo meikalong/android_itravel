@@ -1,0 +1,38 @@
+body { background-color: #EEEDED; }
+
+.title { text-align: center; height: 80px; line-height: 70px; color: #5F5F5F; }
+.title span { font-weight: bolder; padding: 0px 1%; }
+
+.column { position: relative; padding: 0px 2%; }
+.column img { border-radius: 5px; }
+.column div { color: #fff; }
+
+.product-msg, .product-position { position: absolute; bottom: 10%; }
+
+.product-msg { left: 7%; }
+.product-msg .span-line { opacity: 0.5; }
+
+.product-position { right: 10%; }
+
+@media (min-width: 300px) { .column { font-size: 12px; } }
+@media (min-width: 350px) { .column { font-size: 14px; } }
+@media (min-width: 400px) { .column { font-size: 16px; } }
+@media (min-width: 450px) { .column { font-size: 18px; } }
+@media (min-width: 500px) { .column { font-size: 20px; } }
+
+@media (min-width: 300px) { .product-msg .span, .product-msg .span-line { font-size: 15px; } }
+@media (min-width: 350px) { .product-msg .span, .product-msg .span-line { font-size: 18px; } }
+@media (min-width: 400px) { .product-msg .span, .product-msg .span-line { font-size: 21px; } }
+@media (min-width: 450px) { .product-msg .span, .product-msg .span-line { font-size: 24px; } }
+@media (min-width: 500px) { .product-msg .span, .product-msg .span-line { font-size: 27px; } }
+
+@media (min-width: 300px) { .title { font-size: 16px; } }
+@media (min-width: 350px) { .title { font-size: 19px; } }
+@media (min-width: 400px) { .title { font-size: 22px; } }
+@media (min-width: 450px) { .title { font-size: 25px; } }
+@media (min-width: 500px) { .title { font-size: 28px; } }
+
+.product-msg, .product-position { line-height: 1.7; }
+
+a { display: block; border-radius: 5px; }
+

@@ -1,0 +1,58 @@
+.top-img:before, .column:before, .guanggao:before, a:before, .top-img:after, .column:after, .guanggao:after, a:after { display: table; content: ""; clear: both; }
+
+.top-img, .top-img img, .column, .subcolumn img, .guanggao, .guanggao img { width: 100%; }
+
+@media (min-width: 300px) { .column { font-size: 12px; }
+  .go-where-title { font-size: 17px; }
+  .h { font-size: 14px; }
+  .info-msg { font-size: 12px; }
+  .strong { font-size: 12px; }
+  .decoration { font-size: 10px; } }
+@media (min-width: 350px) { .column { font-size: 14px; }
+  .go-where-title { font-size: 19px; }
+  .h { font-size: 15px; }
+  .info-msg { font-size: 13px; }
+  .strong { font-size: 13px; }
+  .decoration { font-size: 11px; } }
+@media (min-width: 400px) { .column { font-size: 15px; }
+  .go-where-title { font-size: 20px; }
+  .h { font-size: 17px; }
+  .info-msg { font-size: 15px; }
+  .strong { font-size: 15px; }
+  .decoration { font-size: 13px; } }
+@media (min-width: 450px) { .column { font-size: 16px; }
+  .go-where-title { font-size: 24px; }
+  .h { font-size: 18px; }
+  .info-msg { font-size: 18px; }
+  .strong { font-size: 18px; }
+  .decoration { font-size: 16px; } }
+@media (min-width: 500px) { .column { font-size: 17px; }
+  .go-where-title { font-size: 30px; }
+  .h { font-size: 21px; }
+  .info-msg { font-size: 20px; }
+  .strong { font-size: 20px; }
+  .decoration { font-size: 18px; } }
+.subcolumn div { padding: 10px 3%; text-align: center; color: #808080; }
+
+.inner-go-where { padding: 0px 4%; }
+
+.h, .go-where-title { font-weight: bold; color: #535557; padding: 5px 0px 10px 0px; display: inline-block; line-height: 1.1; }
+
+.h small { color: #777; font-size: smaller; font-weight: normal; line-height: 1.5; }
+
+.info { position: relative; margin-top: 15px; }
+.info .title { padding: 0px 4%; }
+
+.info-msg { position: absolute; width: 100%; height: 100%; text-align: center; line-height: 100%; padding-top: 31%; color: #fff; }
+.info-msg .middle { height: 1px; background-color: #fff; margin: 8% auto 5% auto; width: 80%; }
+
+.decoration { font-weight: 100; }
+
+.info-round { position: absolute; width: 27%; left: 70%; top: -1px; z-index: 1; }
+
+.product-info { position: relative; }
+
+.product-extra { position: absolute; top: 10px; left: 15px; background: rgba(0, 0, 0, 0.4); color: #fff; height: 24px; line-height: 23px; border-radius: 12px; padding: 0 15px; }
+
+a { display: block; }
+

@@ -14,6 +14,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.itravel.R;
+import com.itravel.fragments.FragmentFind;
+import com.itravel.fragments.FragmentIndex;
+import com.itravel.fragments.FragmentMine;
+import com.itravel.fragments.FragmentSort;
+import com.itravel.util.ClassManagerUtil;
 import com.itravel.util.Global;
 
 public class ImageActivity extends Activity implements OnClickListener {
@@ -29,16 +34,28 @@ public class ImageActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.image_activity);
-		welcomeImg = (ImageView) this.findViewById(R.id.welcome_img);
-		AlphaAnimation anima = new AlphaAnimation(1.0f, 1.0f);
-		anima.setDuration(3000);// 设置动画显示时间
-		welcomeImg.startAnimation(anima);
-		anima.setAnimationListener(new AnimationImpl());
+
 		et = (EditText) findViewById(R.id.ip);
 		kaifa = (Button) findViewById(R.id.kaifa);
 		yanshi = (Button) findViewById(R.id.yanshi);
+		welcomeImg = (ImageView) this.findViewById(R.id.welcome_img);
+
+		AlphaAnimation anima = new AlphaAnimation(1.0f, 1.0f);
+		anima.setDuration(3000);// 设置动画显示时间
+		anima.setAnimationListener(new AnimationImpl());
+		welcomeImg.startAnimation(anima);
+
 		kaifa.setOnClickListener(this);
 		yanshi.setOnClickListener(this);
+
+		newInstance();
+	}
+
+	private void newInstance() {
+		ClassManagerUtil.newInstance(FragmentIndex.class);
+		ClassManagerUtil.newInstance(FragmentSort.class);
+		ClassManagerUtil.newInstance(FragmentFind.class);
+		ClassManagerUtil.newInstance(FragmentMine.class);
 	}
 
 	@Override
@@ -49,7 +66,7 @@ public class ImageActivity extends Activity implements OnClickListener {
 			skip();
 			break;
 		case R.id.kaifa:
-			checkIP();
+			linkIP();
 			break;
 		}
 	}
@@ -73,21 +90,19 @@ public class ImageActivity extends Activity implements OnClickListener {
 
 	}
 
-	private void checkIP() {
+	private void linkIP() {
 		final String ip = et.getText().toString();
 		if (ip != null && ip.length() > 4) {
-			if (Global.isIp(ip)) {
-				Thread t = new Thread(new Runnable() {
-					public void run() {
-						Global.STATE = true;
-						Global.IP = ip;
-						skip();
-					}
-				});
-				t.start();
-			}
+			Thread t = new Thread(new Runnable() {
+				public void run() {
+					Global.STATE = true;
+					Global.IP = ip;
+					skip();
+				}
+			});
+			t.start();
 		} else {
-			showToast("IP地址不正确或者Ping不通");
+			showToast("请输入正确的地址");
 		}
 	}
 

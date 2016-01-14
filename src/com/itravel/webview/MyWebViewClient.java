@@ -1,10 +1,14 @@
 package com.itravel.webview;
 
+import java.io.IOException;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -13,6 +17,7 @@ import android.widget.Toast;
 import com.itravel.R;
 import com.itravel.activity.WebViewActivity;
 import com.itravel.dialog.LoadingDialog;
+import com.itravel.util.Global;
 
 public class MyWebViewClient extends WebViewClient {
 	private Activity activity;
@@ -28,8 +33,7 @@ public class MyWebViewClient extends WebViewClient {
 		myWebViewClient(activity, false, true, webView);
 	}
 
-	public MyWebViewClient(Activity activity, boolean currentActivity,
-			WebView webView) {
+	public MyWebViewClient(Activity activity, boolean currentActivity, WebView webView) {
 		myWebViewClient(activity, currentActivity, true, webView);
 	}
 
@@ -46,17 +50,17 @@ public class MyWebViewClient extends WebViewClient {
 	 */
 	@SuppressWarnings("deprecation")
 	@SuppressLint("SetJavaScriptEnabled")
-	private void myWebViewClient(Activity activity, boolean currentActivity,
-			boolean ifDialog, WebView webView) {
+	private void myWebViewClient(Activity activity, boolean currentActivity, boolean ifDialog,
+			WebView webView) {
 		this.activity = activity;
-		// this.currentActivity = currentActivity;
-		this.currentActivity = false;
+		this.currentActivity = currentActivity;
 		this.ifDialog = ifDialog;
 		WebSettings setting = webView.getSettings();
 		setting.setJavaScriptEnabled(true);
 		setting.setCacheMode(WebSettings.LOAD_NO_CACHE);
 		setting.setSaveFormData(false);
 		setting.setSavePassword(false);
+		setting.setSupportZoom(false);
 	}
 
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
@@ -76,8 +80,8 @@ public class MyWebViewClient extends WebViewClient {
 			// 此处使用putExtras，接受方就响应的使用getExtra
 			intent.putExtras(b);
 			activity.startActivity(intent);
-			activity.overridePendingTransition(R.anim.myslide_in_right,
-					R.anim.myslide_out_left);
+			// 设置切换效果
+			activity.overridePendingTransition(R.anim.myslide_in_right, R.anim.myslide_out_left);
 		} else {
 			webView.loadUrl(url);
 		}
@@ -97,11 +101,9 @@ public class MyWebViewClient extends WebViewClient {
 	}
 
 	// 加载错误时要做的工作
-	public void onReceivedError(WebView view, int errorCode,
-			String description, String failingUrl) {
+	public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 		cancleDialog();
-		Toast.makeText(activity, errorCode + "：" + description,
-				Toast.LENGTH_LONG).show();
+		Toast.makeText(activity, errorCode + "：" + description, Toast.LENGTH_LONG).show();
 	}
 
 	private void showDialog(boolean ifDialog) {
@@ -120,23 +122,28 @@ public class MyWebViewClient extends WebViewClient {
 	}
 
 	// 拦截请求，加载本地静态文件，例如加载本地js文件或者css文件，加快页面加载速度
-	// @Override
-	// public WebResourceResponse shouldInterceptRequest(WebView view,
-	// String url) {
-	// WebResourceResponse response = null;
-	// if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-	// response = super.shouldInterceptRequest(view, url);
-	// if (url.contains("icon.png")) {
-	// try {
-	// response = new WebResourceResponse("image/png",
-	// "UTF-8", getResources().getAssets().open(
-	// "icon.png"));
-	// } catch (IOException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// }
-	// return response;
-	// }
+	@Override
+	public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+		WebResourceResponse response = null;
+		// if里面有个方法
+		if (url.contains(Global.urlContent)) {
+			AssetManager assetManager = null;
+			try {
+				assetManager = activity.getAssets();
+				// image/png换成方法
+				// UTF-8换成全局静态变量
+				// open里面的路径换成方法
+				response = new WebResourceResponse("image/png", "UTF-8",
+						assetManager.open("icon.png"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (assetManager != null) {
+					assetManager.close();
+				}
+			}
+		}
+		return response;
+	}
 
 }

@@ -1,0 +1,49 @@
+.search:before, .form-search:before, .column:before, .search:after, .form-search:after, .column:after { display: table; content: ""; clear: both; }
+
+.search { padding: 2% 0px; background-color: #E7E7E7; }
+
+.form-search { margin: 0 auto; float: none; position: relative; background-color: #fff; }
+.form-search .glyphicon-search { position: absolute; top: 30%; left: 5%; color: #D0D0D0; }
+
+.search-line-left:before { top: 15%; height: 70%; }
+
+.text-content { color: #686868; }
+
+.position { text-align: center; height: 34px; }
+
+.form .form-control { border-radius: 0px; padding-left: 17%; }
+
+.column { padding: 2%; position: relative; }
+.column .msg { padding-left: 32%; height: 100%; }
+
+.msg-top { color: #676767; }
+@media (min-width: 300px) { .msg-top { font-size: 13px; } }
+@media (min-width: 350px) { .msg-top { font-size: 14px; } }
+@media (min-width: 400px) { .msg-top { font-size: 15px; } }
+@media (min-width: 450px) { .msg-top { font-size: 16px; } }
+@media (min-width: 500px) { .msg-top { font-size: 17px; } }
+
+.msg-middle { color: #fff; bottom: 34%; width: 66%; }
+@media (min-width: 300px) { .msg-middle { font-size: 10px; } }
+@media (min-width: 350px) { .msg-middle { font-size: 11px; } }
+@media (min-width: 400px) { .msg-middle { font-size: 12px; } }
+@media (min-width: 450px) { .msg-middle { font-size: 13px; } }
+@media (min-width: 500px) { .msg-middle { font-size: 14px; } }
+.msg-middle div { padding: 1.5%; background-color: #2F98E0; float: left; margin-right: 2%; }
+
+.msg-bottom { color: #A8A8A8; position: absolute; bottom: 5%; }
+@media (min-width: 300px) { .msg-bottom { font-size: 12px; } }
+@media (min-width: 350px) { .msg-bottom { font-size: 13px; } }
+@media (min-width: 400px) { .msg-bottom { font-size: 14px; } }
+@media (min-width: 450px) { .msg-bottom { font-size: 15px; } }
+@media (min-width: 500px) { .msg-bottom { font-size: 16px; } }
+
+.msg-price { color: #FF5B45; right: 10px; bottom: 5%; position: absolute; }
+@media (min-width: 300px) { .msg-price { font-size: 16px; } }
+@media (min-width: 350px) { .msg-price { font-size: 17px; } }
+@media (min-width: 400px) { .msg-price { font-size: 18px; } }
+@media (min-width: 450px) { .msg-price { font-size: 19px; } }
+@media (min-width: 500px) { .msg-price { font-size: 20px; } }
+
+.msg-bottom, .msg-middle { position: absolute; left: 32%; }
+

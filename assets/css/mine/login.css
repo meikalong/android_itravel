@@ -1,0 +1,38 @@
+.select:before, .form:before, .select:after, .form:after { display: table; content: ""; clear: both; }
+
+body { background-image: url("../../img/mine/login/login_bk.png"); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; }
+
+.contain { width: 80%; margin: 0 auto; padding-top: 10%; }
+
+.select { border: 2px solid #33BD61; border-radius: 4px; }
+.select .selected { background-color: #33BD61; }
+.select .zhanghao, .select .dongtai { padding: 10px; color: #fff; text-align: center; }
+@media (min-width: 300px) { .select .zhanghao, .select .dongtai { font-size: 16px; } }
+@media (min-width: 350px) { .select .zhanghao, .select .dongtai { font-size: 17px; } }
+@media (min-width: 400px) { .select .zhanghao, .select .dongtai { font-size: 18px; } }
+@media (min-width: 450px) { .select .zhanghao, .select .dongtai { font-size: 19px; } }
+@media (min-width: 500px) { .select .zhanghao, .select .dongtai { font-size: 20px; } }
+
+.form { margin: 0 auto; }
+.form .form-group { position: relative; margin-top: 15px; }
+.form .form-group input { background-color: transparent; padding-left: 30px; height: auto; }
+.form .form-group input[type="submit"] { background-color: #33BD61; }
+.form .form-group .add { background-color: #FF8A00; }
+.form .form-group input[type="submit"], .form .form-group .add { color: #fff; padding: 10px; }
+@media (min-width: 300px) { .form .form-group input[type="submit"], .form .form-group .add { font-size: 16px; } }
+@media (min-width: 350px) { .form .form-group input[type="submit"], .form .form-group .add { font-size: 17px; } }
+@media (min-width: 400px) { .form .form-group input[type="submit"], .form .form-group .add { font-size: 18px; } }
+@media (min-width: 450px) { .form .form-group input[type="submit"], .form .form-group .add { font-size: 19px; } }
+@media (min-width: 500px) { .form .form-group input[type="submit"], .form .form-group .add { font-size: 20px; } }
+.form .find { color: #fff; float: right; }
+@media (min-width: 300px) { .form .find { font-size: 15px; } }
+@media (min-width: 350px) { .form .find { font-size: 16px; } }
+@media (min-width: 400px) { .form .find { font-size: 17px; } }
+@media (min-width: 450px) { .form .find { font-size: 18px; } }
+@media (min-width: 500px) { .form .find { font-size: 19px; } }
+
+.form-bk { background-color: #fff; opacity: 0.7; border-radius: 4px; padding: 5% 5%; margin-top: 30px; }
+.form-bk .form-group { margin: 0; }
+.form-bk .form-group input { height: 50px; }
+.form-bk .icon { position: absolute; left: 0px; top: 12px; color: #9A9A9A; font-size: 20px; }
+

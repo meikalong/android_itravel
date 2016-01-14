@@ -1,0 +1,32 @@
+.product-info .column:before, .order-bottom:before, .product-info .column:after, .order-bottom:after { display: table; content: ""; clear: both; }
+
+body { background-color: #EEEEEE; padding-bottom: 50px; }
+
+.title { padding: 3% 4%; background-color: #fff; }
+.title .top { color: #3C3C3C; padding: 2% 0px; }
+@media (min-width: 300px) { .title .top { font-size: 16px; } }
+@media (min-width: 350px) { .title .top { font-size: 18px; } }
+@media (min-width: 400px) { .title .top { font-size: 20px; } }
+@media (min-width: 450px) { .title .top { font-size: 22px; } }
+@media (min-width: 500px) { .title .top { font-size: 24px; } }
+.title .product-price { text-align: right; }
+.title .bottom { color: #ABABAB; padding: 2% 0px; }
+.title .bottom-right { float: right; line-height: 0.8; }
+.title .num { color: #686868; }
+.title .price { color: #FF7467; }
+@media (min-width: 300px) { .title .price { font-size: 20px; } }
+@media (min-width: 350px) { .title .price { font-size: 21px; } }
+@media (min-width: 400px) { .title .price { font-size: 22px; } }
+@media (min-width: 450px) { .title .price { font-size: 23px; } }
+@media (min-width: 500px) { .title .price { font-size: 24px; } }
+
+.product-info { padding: 0px 4% 5% 4%; }
+.product-info .column { background-color: #fff; height: 50px; margin-top: 5%; }
+.product-info .right { padding-top: 12px; color: #3E3E3E; font-size: 19px; float: left; }
+.product-info .left { float: left; background-color: #40C895; width: 7px; height: 50px; position: relative; margin-right: 6%; }
+.product-info .left:before { position: absolute; top: 17px; right: -100%; display: inline-block; border-top: 8px solid transparent; border-left: 8px solid #40C895; border-bottom: 8px solid transparent; content: ''; }
+.product-info .column-msg { background-color: #fff; color: #676767; padding: 10px; line-height: 2; text-align: left; font-size: 15px; }
+
+.order-bottom { max-width: 600px; height: 50px; position: fixed; bottom: 0px; left: 0px; }
+.order-bottom .pre-order { background-color: black; opacity: 0.5; height: 50px; }
+.order-bottom .order { background-color: #FF7467; opacity: 1; height: 50px; text-align: center; display: block; color: #fff; font-size: 20px; }

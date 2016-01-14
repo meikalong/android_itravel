@@ -12,12 +12,14 @@ import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView;
 
 import com.itravel.R;
+import com.itravel.webview.JsInterface;
 import com.itravel.webview.MyWebChromeClient;
 import com.itravel.webview.MyWebViewClient;
 
 public class WebViewActivity extends Activity {
 
 	private WebView webView;
+	private JsInterface jsInterface = new JsInterface();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class WebViewActivity extends Activity {
 		webView.setWebViewClient(new MyWebViewClient(this, webView));
 		webView.setWebChromeClient(new MyWebChromeClient(this));
 		webView.loadUrl(intent.getStringExtra("url"));
+		webView.addJavascriptInterface(jsInterface, "jsInterface");
 
 	}
 
@@ -60,8 +63,8 @@ public class WebViewActivity extends Activity {
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View v = inflator.inflate(layoutId, null);
 			@SuppressWarnings("deprecation")
-			ActionBar.LayoutParams layout = new ActionBar.LayoutParams(
-					LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+			ActionBar.LayoutParams layout = new ActionBar.LayoutParams(LayoutParams.FILL_PARENT,
+					LayoutParams.FILL_PARENT);
 			actionBar.setCustomView(v, layout);
 		}
 	}
@@ -88,4 +91,5 @@ public class WebViewActivity extends Activity {
 		finish();
 		overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 	}
+
 }

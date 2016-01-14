@@ -20,13 +20,14 @@ import com.itravel.fragments.FragmentFind;
 import com.itravel.fragments.FragmentIndex;
 import com.itravel.fragments.FragmentMine;
 import com.itravel.fragments.FragmentSort;
+import com.itravel.util.ClassManagerUtil;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
 	// 定义Fragment页面
-	private FragmentIndex fragmentIndex = new FragmentIndex();
-	private FragmentSort fragmentSort = new FragmentSort();
-	private FragmentFind fragmentFind = new FragmentFind();
-	private FragmentMine fragmentMine = new FragmentMine();
+	private FragmentIndex fragmentIndex = ClassManagerUtil.newInstance(FragmentIndex.class);
+	private FragmentSort fragmentSort = ClassManagerUtil.newInstance(FragmentSort.class);
+	private FragmentFind fragmentFind = ClassManagerUtil.newInstance(FragmentFind.class);
+	private FragmentMine fragmentMine = ClassManagerUtil.newInstance(FragmentMine.class);
 	private Fragment currentFragment = null;
 	// 定义布局对象
 	private FrameLayout indexFl, sortFl, findFl, mineFl;
@@ -205,8 +206,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 			return;
 		}
 		// 得到Fragment事务管理器
-		FragmentTransaction fragmentTransaction = this
-				.getSupportFragmentManager().beginTransaction();
+		FragmentTransaction fragmentTransaction = this.getSupportFragmentManager()
+				.beginTransaction();
 		// 替换当前的页面
 		if (currentFragment != null) {
 			fragmentTransaction.hide(currentFragment);
@@ -235,8 +236,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	private void exit() {
 		if (!isExit) {
 			isExit = true;
-			Toast.makeText(getApplicationContext(), "再按一次退出爱旅行",
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "再按一次退出爱旅行", Toast.LENGTH_SHORT).show();
 			// 利用handler延迟发送更改状态信息
 			mHandler.sendEmptyMessageDelayed(0, 2000);
 		} else {
