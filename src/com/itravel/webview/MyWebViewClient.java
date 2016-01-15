@@ -30,6 +30,8 @@ public class MyWebViewClient extends WebViewClient {
 	private boolean currentActivity;
 	private boolean ifDialog;
 
+	private AssetManager assetManager;
+
 	public MyWebViewClient(Activity activity, WebView webView) {
 		myWebViewClient(activity, false, true, webView);
 	}
@@ -56,6 +58,7 @@ public class MyWebViewClient extends WebViewClient {
 		this.activity = activity;
 		this.currentActivity = currentActivity;
 		this.ifDialog = ifDialog;
+		this.assetManager = activity.getAssets();
 		WebSettings setting = webView.getSettings();
 		setting.setJavaScriptEnabled(true);
 		setting.setCacheMode(WebSettings.LOAD_NO_CACHE);
@@ -65,6 +68,7 @@ public class MyWebViewClient extends WebViewClient {
 	}
 
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
+		super.shouldOverrideUrlLoading(webView, url);
 
 		if (url.contains("iframepage")) {// iframepage里面的页面是iframe引用的页面
 			return false;
@@ -128,23 +132,19 @@ public class MyWebViewClient extends WebViewClient {
 		WebResourceResponse response = null;
 
 		if (checkUrlForIntercept(url)) {
-			AssetManager assetManager = null;
 			InputStream inputStream = null;
+			String type = getMimeType(url);
+			String path = getFilePath(url);
 			try {
-				assetManager = activity.getAssets();
-				String type = getMimeType(url);
-				String path = getFilePath(url);
-				inputStream = assetManager.open(path);
+				inputStream = assetManager.open(path, AssetManager.ACCESS_BUFFER);
 				response = new WebResourceResponse(type, Global.character, inputStream);
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally {
-				if (inputStream != null) {
-					try {
-						inputStream.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+				if (response != null) {
+					System.out.println(">>>>>>>>>>>>>拦截并赋值了：" + path);
+				} else {
+					System.out.println(">>>>>>>>>>>>>拦截但是没有找到的文件：" + path);
 				}
 			}
 		}

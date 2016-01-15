@@ -1,6 +1,5 @@
 package com.itravel.fragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
@@ -20,7 +19,6 @@ public class FragmentIndex extends MyFragment {
 		return createRefresh(inflater, container);
 	}
 
-	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	public void onStart() {
 		super.onStart();
