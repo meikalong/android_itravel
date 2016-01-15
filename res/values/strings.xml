@@ -18,6 +18,7 @@
     <string name="updated_just_now">刚刚更新</string>
     <string name="time_error">时间有问题</string>
     
-    <string name="IP">10.58.21.210:8080</string>
+    <!-- <string name="IP">10.58.21.210:8080</string> -->
+    <string name="IP">192.168.0.103:8080</string>
 
 </resources>
