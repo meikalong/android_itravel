@@ -2,6 +2,9 @@ package com.itravel.webview;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -19,6 +22,7 @@ import com.itravel.R;
 import com.itravel.activity.WebViewActivity;
 import com.itravel.dialog.LoadingDialog;
 import com.itravel.util.Global;
+import com.itravel.util.SecurityUtil;
 
 public class MyWebViewClient extends WebViewClient {
 	private Activity activity;
@@ -70,6 +74,9 @@ public class MyWebViewClient extends WebViewClient {
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
 		super.shouldOverrideUrlLoading(webView, url);
 
+		System.out.println("shouldOverrideUrlLoading>>>>>>>>>>>>>" + url);
+
+		// 这一段是在演示模式下要添加的，正式的时候不需要这一段
 		if (url.contains("iframepage")) {// iframepage里面的页面是iframe引用的页面
 			return false;
 		}
@@ -95,13 +102,13 @@ public class MyWebViewClient extends WebViewClient {
 
 	// 开始加载网页时要做的工作
 	public void onPageStarted(WebView webView, String url, Bitmap favicon) {
-		System.out.println("onPageStarted>>>>>>>>>>>>>>>url:>>>" + url);
+		// System.out.println("onPageStarted>>>>>>>>>>>>>>>url:>>>" + url);
 		showDialog(ifDialog);
 	}
 
 	// 加载完成时要做的工作
 	public void onPageFinished(WebView view, String url) {
-		System.out.println("onPageFinished>>>>>>>>>>>>>>>url:>>>" + url);
+		// System.out.println("onPageFinished>>>>>>>>>>>>>>>url:>>>" + url);
 		cancleDialog();
 	}
 
@@ -131,6 +138,7 @@ public class MyWebViewClient extends WebViewClient {
 	public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
 		WebResourceResponse response = null;
 
+		// 拦截请求，加载本地资源
 		if (checkUrlForIntercept(url)) {
 			InputStream inputStream = null;
 			String type = getMimeType(url);
@@ -141,31 +149,53 @@ public class MyWebViewClient extends WebViewClient {
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally {
-				if (response != null) {
-					System.out.println(">>>>>>>>>>>>>拦截并赋值了：" + path);
-				} else {
-					System.out.println(">>>>>>>>>>>>>拦截但是没有找到的文件：" + path);
+				if (response == null) {
+					System.out.println("拦截但是没有找到的文件：" + path);
 				}
 			}
+			return response;
 		}
+
+		// 对请求进行加密
+		URL requestUrl = null;
+		URLConnection connection = null;
+		try {
+			requestUrl = new URL(injectIsParams(url));
+			connection = requestUrl.openConnection();
+			response = new WebResourceResponse(connection.getContentType(),
+					connection.getHeaderField("encoding"), connection.getInputStream());
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		return response;
 	}
 
-	private boolean checkUrlForIntercept(String url) {
+	private static String injectIsParams(String url) {
+		int position = url.indexOf("?");
+		String salt = SecurityUtil.randomSalt();
+		String content = SecurityUtil.MD5(url, salt, Global.key) + "-" + salt;
+		if (position != -1) {
+			url = url + "&access=" + content;
+			return url;
+		} else {
+			url = url + "?access=" + content;
+			return url;
+		}
+	}
+
+	private static boolean checkUrlForIntercept(String url) {
 		boolean flag = false;
 		if (!url.contains(Global.urlContent)) {
 			return flag;
 		}
-		int css = url.lastIndexOf(Global.urlCss);
-		int js = url.lastIndexOf(Global.urlJs);
-		int urlpng = url.lastIndexOf(Global.urlPng);
-		if (css != -1 || js != -1 || urlpng != -1) {
-			flag = true;
-		}
+		flag = true;
 		return flag;
 	}
 
-	private String getMimeType(String url) {
+	private static String getMimeType(String url) {
 		int css = url.lastIndexOf(Global.urlCss);
 		int js = url.lastIndexOf(Global.urlJs);
 		int urlpng = url.lastIndexOf(Global.urlPng);
@@ -179,10 +209,12 @@ public class MyWebViewClient extends WebViewClient {
 		return "text/html;charset=UTF-8";
 	}
 
-	private String getFilePath(String url) {
+	private static String getFilePath(String url) {
+
 		int start = url.indexOf(Global.urlContent) + Global.urlContent.length();
 		int end = url.length();
 
 		return url.substring(start, end);
 	}
+
 }

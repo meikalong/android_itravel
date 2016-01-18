@@ -46,6 +46,12 @@ public class WebViewActivity extends Activity {
 		return super.onKeyDown(keyCode, event);
 	}
 
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		webView.destroy();
+	}
+
 	/**
 	 * 设置ActionBar的布局
 	 * 

@@ -12,6 +12,7 @@ public class Global {
 	public static final String mimeTypeImg = "image/png";
 	public static final String character = "UTF-8";
 	private static String servletName = null;
+	public static final String key = "jhgKi091KiGTJasdwed";
 
 	/**
 	 * 最后返回：http://192.168.0.100/itravel/
