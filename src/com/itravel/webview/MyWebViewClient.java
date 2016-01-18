@@ -2,9 +2,6 @@ package com.itravel.webview;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -22,7 +19,6 @@ import com.itravel.R;
 import com.itravel.activity.WebViewActivity;
 import com.itravel.dialog.LoadingDialog;
 import com.itravel.util.Global;
-import com.itravel.util.SecurityUtil;
 
 public class MyWebViewClient extends WebViewClient {
 	private Activity activity;
@@ -153,37 +149,9 @@ public class MyWebViewClient extends WebViewClient {
 					System.out.println("拦截但是没有找到的文件：" + path);
 				}
 			}
-			return response;
-		}
-
-		// 对请求进行加密
-		URL requestUrl = null;
-		URLConnection connection = null;
-		try {
-			requestUrl = new URL(injectIsParams(url));
-			connection = requestUrl.openConnection();
-			response = new WebResourceResponse(connection.getContentType(),
-					connection.getHeaderField("encoding"), connection.getInputStream());
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 
 		return response;
-	}
-
-	private static String injectIsParams(String url) {
-		int position = url.indexOf("?");
-		String salt = SecurityUtil.randomSalt();
-		String content = SecurityUtil.MD5(url, salt, Global.key) + "-" + salt;
-		if (position != -1) {
-			url = url + "&access=" + content;
-			return url;
-		} else {
-			url = url + "?access=" + content;
-			return url;
-		}
 	}
 
 	private static boolean checkUrlForIntercept(String url) {
