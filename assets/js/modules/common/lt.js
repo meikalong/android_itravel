@@ -61,14 +61,14 @@
 				return basePath("travel/");
 			},
 			getCssPath : function() {
-				return basePath("static/css/");
+				return basePath("static/mobile/css/");
 			},
 			getJsPath : function() {
-				return basePath("static/js/");
+				return basePath("static/mobile/js/");
 			},
 			getImgPath : function() {
 				mj.getJsPath();
-				return basePath("static/img/");
+				return basePath("static/mobile/img/");
 			},
 			isArray : function(o) {
 				return type(o);

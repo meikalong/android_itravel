@@ -7,8 +7,9 @@ $(function() {
 		
 		$(".column-right").hide();
 		$("#" + selectId).show();
-		var _$ = window.parent.document.getElementById("b").contentWindow.$;
-		_$(".column-right").hide();
-		_$("#"+selectId).show();
+		var b$ = window.parent.document.getElementById("b").contentWindow.$;
+		b$(".column-right").hide();
+		b$("#"+selectId).show();
+		b$("img.imglazy").lazyload();
 	})
 })

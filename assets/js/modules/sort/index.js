@@ -66,17 +66,17 @@ $(function() {
 				content += '<div class="width right-img">';
 				var temp = sortList[i];
 				if (temp != null) {
-					content += '<img src="'
+					content += '<img src="'+lt.getImgPath()+'sort/600-400.png" data-original="'
 							+ temp.imageUrl
-							+ '"><a href="'+lt.getBasePath()+'sort/search?content='+temp.name+'" target="_top"><div class="msg1"><p class="text"><span class="strong">'
+							+ '" class="imglazy"><a href="'+lt.getBasePath()+'sort/search?content='+temp.name+'" target="_top"><div class="msg1"><p class="text"><span class="strong">'
 							+ temp.name + '</span> <br>' + temp.nameEn
 							+ '</p></div></a>';
 				}
 				temp = sortList[i + 1];
 				if (temp != null) {
-					content += '<img src="'
+					content += '<img src="'+lt.getImgPath()+'sort/600-400.png" data-original="'
 							+ temp.imageUrl
-							+ '"><a href="'+lt.getBasePath()+'sort/search?content='+temp.name+'" target="_top"><div class="msg2"><p class="text"><span class="strong">'
+							+ '" class="imglazy"><a href="'+lt.getBasePath()+'sort/search?content='+temp.name+'" target="_top"><div class="msg2"><p class="text"><span class="strong">'
 							+ temp.name + '</span> <br>' + temp.nameEn
 							+ '</p></div></a>';
 				}
@@ -87,5 +87,6 @@ $(function() {
 		b$("body").empty();
 		b$("body").append(content);
 		b$("#right-column1").show();
+		b$("img.imglazy").lazyload();
 	}
 })
