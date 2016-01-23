@@ -17,11 +17,7 @@ public class FragmentMine extends MyFragment {
 		}
 
 		webView = (WebView) getView().findViewById(R.id.webView);
-		if (Global.STATE) {
-			webView.loadUrl(Global.getServletName("travel/mine"));
-		} else {
-			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/mine/index.html");
-		}
+		webView.loadUrl(Global.getServletUrl("/travel/mine"));
 		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView));
 
 		isload = false;

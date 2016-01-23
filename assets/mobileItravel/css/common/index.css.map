@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEQ,wBAAa;AACb,8BAAmB;AACnB,yBAAc;AACd,0BAAe;AACf,4BAAiB;AACjB,4BAAiB;AACjB,uBAAY;AACZ,uBAAY;AACZ,uBAAY;AACZ,2BAAgB;AAChB,4BAAiB;AACjB,2BAAgB;AAChB,wBAAa;AACb,sBAAW;AACX,2BAAgB;AAChB,8BAAmB;AACnB,2BAAgB;AAChB,yBAAc;AACd,wBAAa;AACb,wBAAa;AACb,wBAAa;AACb,sBAAW;AACX,uBAAY;AAyBZ,4CAAoC",
-"sources": ["../../sass/common/index.scss"],
-"names": [],
-"file": "index.css"
-}

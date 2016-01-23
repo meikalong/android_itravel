@@ -19,11 +19,7 @@ public class FragmentFind extends MyFragment {
 		}
 
 		webView = (WebView) getView().findViewById(R.id.webView);
-		if (Global.STATE) {
-			webView.loadUrl(Global.getServletName("travel/find"));
-		} else {
-			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/find/index.html");
-		}
+		webView.loadUrl(Global.getServletUrl("/travel/find"));
 		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView));
 
 		isload = false;

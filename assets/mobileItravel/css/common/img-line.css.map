@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,SAAU,GACT,WAAW,EAAE,GAAG",
-"sources": ["../../sass/common/img-line.scss"],
-"names": [],
-"file": "img-line.css"
-}

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";;AAIA,MAAM,GACL,aAAa,EAAE,GAAG",
-"sources": ["../../sass/common/round.scss"],
-"names": [],
-"file": "round.css"
-}

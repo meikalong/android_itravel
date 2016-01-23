@@ -79,11 +79,7 @@ public class FragmentIndex extends MyFragment {
 		}
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.setWebViewClient(new MyWebViewClient(false, getActivity(), webView));
-		if (Global.STATE) {
-			webView.loadUrl(Global.getServletName(""));
-		} else {
-			webView.loadUrl("file:///android_asset/mobileItravel/page/travel/index/index.html");
-		}
+		webView.loadUrl(Global.getServletUrl(""));
 		isload = false;
 	}
 

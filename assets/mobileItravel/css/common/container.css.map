@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAGC,mCAAgB,GACd,OAAO,EAAE,KAAK,EACb,OAAO,EAAE,EAAE,EACZ,KAAK,EAAE,IAAI;;;ACAb,iCAA8C,GAD/C,UAAU,GAER,MAAM,EAAE,iBAAiB,EACzB,KAAK,EAAE,KAAK;AAEb,iCAA8C,GAL/C,UAAU,GAMR,MAAM,EAAE,iBAAiB,EACzB,KAAK,EAAE,KAAK;AAEb,kCAA8C,GAT/C,UAAU,GAUR,MAAM,EAAE,iBAAiB,EACzB,KAAK,EAAE,MAAM",
-"sources": ["../../sass/common/import/_base.scss","../../sass/common/container.scss"],
-"names": [],
-"file": "container.css"
-}
