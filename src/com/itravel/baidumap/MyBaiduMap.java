@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -50,8 +49,7 @@ public class MyBaiduMap {
 
 		@Override
 		public void onReceiveLocation(BDLocation location) {
-			if (null != location
-					&& location.getLocType() != BDLocation.TypeServerError) {
+			if (null != location && location.getLocType() != BDLocation.TypeServerError) {
 				StringBuffer sb = new StringBuffer(256);
 				sb.append("time : ");
 				/**
@@ -86,8 +84,7 @@ public class MyBaiduMap {
 				sb.append("\nDirection(not all devices have value): ");
 				sb.append(location.getDirection());
 				sb.append("\nPoi: ");
-				if (location.getPoiList() != null
-						&& !location.getPoiList().isEmpty()) {
+				if (location.getPoiList() != null && !location.getPoiList().isEmpty()) {
 					for (int i = 0; i < location.getPoiList().size(); i++) {
 						Poi poi = (Poi) location.getPoiList().get(i);
 						sb.append(poi.getName() + ";");
@@ -122,9 +119,11 @@ public class MyBaiduMap {
 					sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
 				}
 				// System.out.println("KKKKKKKKKKKKK" + sb.toString());
-				if ("161".equals(location.getLocType())) {
-					onStop();
-				}
+				// 暂时先注释，等百度地图的功能完善了，再启用
+				// if ("161".equals(location.getLocType())) {
+				// onStop();
+				// }
+				onStop();
 			}
 		}
 
@@ -148,20 +147,24 @@ public class MyBaiduMap {
 	 */
 	public class SDKReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
-			String s = intent.getAction();
-			System.out.println("MMMMMMMMMMMMMMMMM   action: " + s);
-			if (s.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR)) {
-				Toast.makeText(context,
-						"key 验证出错! 请在 AndroidManifest.xml 文件中检查 key 设置",
-						Toast.LENGTH_LONG).show();
-			} else if (s
-					.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_OK)) {
-				Toast.makeText(context, "key 验证成功! 功能可以正常使用", Toast.LENGTH_LONG)
-						.show();
-			} else if (s
-					.equals(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR)) {
-				Toast.makeText(context, "网络出错", Toast.LENGTH_LONG).show();
-			}
+			// 暂时先注释掉，等百度地图的功能完善了再启用
+			// String s = intent.getAction();
+			// if
+			// (s.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_ERROR))
+			// {
+			// Toast.makeText(context,
+			// "key 验证出错! 请在 AndroidManifest.xml 文件中检查 key 设置",
+			// Toast.LENGTH_LONG).show();
+			// } else if
+			// (s.equals(SDKInitializer.SDK_BROADTCAST_ACTION_STRING_PERMISSION_CHECK_OK))
+			// {
+			// Toast.makeText(context, "key 验证成功! 功能可以正常使用",
+			// Toast.LENGTH_LONG).show();
+			// } else if
+			// (s.equals(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR))
+			// {
+			// Toast.makeText(context, "网络出错", Toast.LENGTH_LONG).show();
+			// }
 		}
 	}
 }

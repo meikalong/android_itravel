@@ -111,7 +111,9 @@ public class MyWebViewClient extends WebViewClient {
 	// 加载错误时要做的工作
 	public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 		cancleDialog();
-		Toast.makeText(activity, errorCode + "：" + description, Toast.LENGTH_LONG).show();
+		Toast.makeText(activity, "哎呀!页面没打开,刷新一下试试", Toast.LENGTH_LONG).show();
+		// 加载一个本地静态页面，页面的内容就是中间一个按钮，用于刷新当前的页面
+		// view.loadUrl("");
 	}
 
 	private void showDialog(boolean ifDialog) {
