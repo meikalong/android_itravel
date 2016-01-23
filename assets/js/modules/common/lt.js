@@ -104,7 +104,12 @@
 
 		function basePath(type) {
 			var location = (window.location + '').split('/');
-			var basePath = location[0] + '//' + location[2] + '/' + location[3] + "/";
+			var basePath;
+			if(location[2]=="localhost:8080"){
+				basePath = location[0] + '//' + location[2] + '/' + location[3] + "/";
+			}else{
+				basePath = location[0] + '//' + location[2] + '/';
+			}
 			if (!isEmpty(type)) {
 				basePath += type;
 			}
