@@ -20,7 +20,7 @@ public class FragmentFind extends MyFragment {
 
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.loadUrl(Global.getServletUrl("/travel/find"));
-		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView));
+		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView, jsInterface));
 
 		isload = false;
 	}

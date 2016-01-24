@@ -19,7 +19,7 @@ public class FragmentSort extends MyFragment {
 
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.loadUrl(Global.getServletUrl("/travel/sort"));
-		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView));
+		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView, jsInterface));
 		webView.setWebChromeClient(new MyWebChromeClient(getActivity(), false));
 
 		isload = false;

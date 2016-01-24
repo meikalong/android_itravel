@@ -13,7 +13,7 @@ import com.itravel.webview.JsInterface;
 public abstract class MyFragment extends Fragment {
 	protected WebView webView;
 	protected boolean isload = true;
-	protected JsInterface jsInterface;
+	protected JsInterface jsInterface = new JsInterface();
 
 	public void setIsload(boolean isload) {
 		this.isload = isload;

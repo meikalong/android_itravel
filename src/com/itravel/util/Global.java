@@ -10,6 +10,7 @@ public class Global {
 	public static final String mimeTypeImg = "image/png";
 	public static final String character = "UTF-8";
 	private static final String SERVLETNAME = "m.cgotravel.com";
+	public static final String JSINTERFACE = "jsInterface";
 
 	/**
 	 * 获得请求路径

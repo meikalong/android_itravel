@@ -19,29 +19,30 @@ import com.itravel.R;
 import com.itravel.activity.WebViewActivity;
 import com.itravel.dialog.LoadingDialog;
 import com.itravel.util.Global;
+import com.itravel.webview.JsInterface.PageReload;
 
 public class MyWebViewClient extends WebViewClient {
 	private Activity activity;
-
 	// 提示信息
 	private LoadingDialog dialog;
-
 	// 是否显示在当前页
 	private boolean currentActivity;
 	private boolean ifDialog;
-
 	private AssetManager assetManager;
+	private JsInterface jsInterface;
 
-	public MyWebViewClient(Activity activity, WebView webView) {
-		myWebViewClient(activity, false, true, webView);
+	public MyWebViewClient(Activity activity, WebView webView, JsInterface jsInterface) {
+		myWebViewClient(activity, false, true, webView, jsInterface);
 	}
 
-	public MyWebViewClient(Activity activity, boolean currentActivity, WebView webView) {
-		myWebViewClient(activity, currentActivity, true, webView);
+	public MyWebViewClient(Activity activity, boolean currentActivity, WebView webView,
+			JsInterface jsInterface) {
+		myWebViewClient(activity, currentActivity, true, webView, jsInterface);
 	}
 
-	public MyWebViewClient(boolean ifDialog, Activity activity, WebView webView) {
-		myWebViewClient(activity, false, ifDialog, webView);
+	public MyWebViewClient(boolean ifDialog, Activity activity, WebView webView,
+			JsInterface jsInterface) {
+		myWebViewClient(activity, false, ifDialog, webView, jsInterface);
 	}
 
 	/**
@@ -54,17 +55,19 @@ public class MyWebViewClient extends WebViewClient {
 	@SuppressWarnings("deprecation")
 	@SuppressLint("SetJavaScriptEnabled")
 	private void myWebViewClient(Activity activity, boolean currentActivity, boolean ifDialog,
-			WebView webView) {
+			WebView webView, JsInterface jsInterface) {
 		this.activity = activity;
 		this.currentActivity = currentActivity;
 		this.ifDialog = ifDialog;
 		this.assetManager = activity.getAssets();
+		this.jsInterface = jsInterface;
 		WebSettings setting = webView.getSettings();
 		setting.setJavaScriptEnabled(true);
 		setting.setCacheMode(WebSettings.LOAD_NO_CACHE);
 		setting.setSaveFormData(false);
 		setting.setSavePassword(false);
 		setting.setSupportZoom(false);
+		webView.addJavascriptInterface(jsInterface, Global.JSINTERFACE);
 	}
 
 	public boolean shouldOverrideUrlLoading(WebView webView, String url) {
@@ -112,8 +115,20 @@ public class MyWebViewClient extends WebViewClient {
 	public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 		cancleDialog();
 		Toast.makeText(activity, "哎呀!页面没打开,刷新一下试试", Toast.LENGTH_LONG).show();
-		// 加载一个本地静态页面，页面的内容就是中间一个按钮，用于刷新当前的页面
-		// view.loadUrl("");
+		view.loadUrl("file:///android_asset/page/error/index.html");
+		final WebView webView = view;
+		final String failUrl = failingUrl;
+		jsInterface.setPageReloadClickListener(new PageReload() {
+			@Override
+			public void pageReload() {
+				webView.post(new Runnable() {
+					@Override
+					public void run() {
+						webView.loadUrl(failUrl);
+					}
+				});
+			}
+		});
 	}
 
 	private void showDialog(boolean ifDialog) {

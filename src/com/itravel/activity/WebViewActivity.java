@@ -30,10 +30,9 @@ public class WebViewActivity extends Activity {
 		Intent intent = getIntent();
 		webView = (WebView) findViewById(R.id.webView);
 
-		webView.setWebViewClient(new MyWebViewClient(this, webView));
+		webView.setWebViewClient(new MyWebViewClient(this, webView, jsInterface));
 		webView.setWebChromeClient(new MyWebChromeClient(this));
 		webView.loadUrl(intent.getStringExtra("url"));
-		webView.addJavascriptInterface(jsInterface, "jsInterface");
 
 	}
 

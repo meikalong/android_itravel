@@ -18,7 +18,7 @@ public class FragmentMine extends MyFragment {
 
 		webView = (WebView) getView().findViewById(R.id.webView);
 		webView.loadUrl(Global.getServletUrl("/travel/mine"));
-		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView));
+		webView.setWebViewClient(new MyWebViewClient(getActivity(), webView, jsInterface));
 
 		isload = false;
 	}

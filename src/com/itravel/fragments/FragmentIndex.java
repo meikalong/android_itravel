@@ -78,7 +78,7 @@ public class FragmentIndex extends MyFragment {
 			return;
 		}
 		webView = (WebView) getView().findViewById(R.id.webView);
-		webView.setWebViewClient(new MyWebViewClient(false, getActivity(), webView));
+		webView.setWebViewClient(new MyWebViewClient(false, getActivity(), webView, jsInterface));
 		webView.loadUrl(Global.getServletUrl(""));
 		isload = false;
 	}
