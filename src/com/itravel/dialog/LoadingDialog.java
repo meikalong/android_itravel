@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.itravel.R;
+import com.cgotravel.R;
 
 public class LoadingDialog extends Dialog {
 

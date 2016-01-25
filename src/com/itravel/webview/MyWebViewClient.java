@@ -15,7 +15,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-import com.itravel.R;
+import com.cgotravel.R;
 import com.itravel.activity.WebViewActivity;
 import com.itravel.dialog.LoadingDialog;
 import com.itravel.util.Global;
@@ -35,11 +35,13 @@ public class MyWebViewClient extends WebViewClient {
 		myWebViewClient(activity, false, true, webView, jsInterface);
 	}
 
-	public MyWebViewClient(Activity activity, boolean currentActivity, WebView webView, JsInterface jsInterface) {
+	public MyWebViewClient(Activity activity, boolean currentActivity, WebView webView,
+			JsInterface jsInterface) {
 		myWebViewClient(activity, currentActivity, true, webView, jsInterface);
 	}
 
-	public MyWebViewClient(boolean ifDialog, Activity activity, WebView webView, JsInterface jsInterface) {
+	public MyWebViewClient(boolean ifDialog, Activity activity, WebView webView,
+			JsInterface jsInterface) {
 		myWebViewClient(activity, false, ifDialog, webView, jsInterface);
 	}
 
@@ -52,7 +54,8 @@ public class MyWebViewClient extends WebViewClient {
 	 */
 	@SuppressWarnings("deprecation")
 	@SuppressLint("SetJavaScriptEnabled")
-	private void myWebViewClient(Activity activity, boolean currentActivity, boolean ifDialog, WebView webView, JsInterface jsInterface) {
+	private void myWebViewClient(Activity activity, boolean currentActivity, boolean ifDialog,
+			WebView webView, JsInterface jsInterface) {
 		this.activity = activity;
 		this.currentActivity = currentActivity;
 		this.ifDialog = ifDialog;

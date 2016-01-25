@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.itravel.R;
+import com.cgotravel.R;
 import com.itravel.baidumap.MyBaiduMap;
 import com.itravel.fragments.FragmentFind;
 import com.itravel.fragments.FragmentIndex;

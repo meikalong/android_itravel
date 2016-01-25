@@ -10,7 +10,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-import com.itravel.R;
+import com.cgotravel.R;
 
 public class MyWebChromeClient extends WebChromeClient {
 

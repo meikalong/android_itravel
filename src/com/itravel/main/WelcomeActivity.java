@@ -8,7 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.ImageView;
 
-import com.itravel.R;
+import com.cgotravel.R;
 import com.itravel.fragments.FragmentFind;
 import com.itravel.fragments.FragmentIndex;
 import com.itravel.fragments.FragmentMine;

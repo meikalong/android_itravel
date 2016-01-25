@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
-import com.itravel.R;
+import com.cgotravel.R;
 import com.itravel.webview.JsInterface;
 
 public abstract class MyFragment extends Fragment {

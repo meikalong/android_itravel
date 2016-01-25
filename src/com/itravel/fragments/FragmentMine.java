@@ -2,7 +2,7 @@ package com.itravel.fragments;
 
 import android.webkit.WebView;
 
-import com.itravel.R;
+import com.cgotravel.R;
 import com.itravel.util.Global;
 import com.itravel.webview.MyWebViewClient;
 

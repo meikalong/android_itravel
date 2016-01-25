@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView;
 
-import com.itravel.R;
+import com.cgotravel.R;
 import com.itravel.webview.JsInterface;
 import com.itravel.webview.MyWebChromeClient;
 import com.itravel.webview.MyWebViewClient;
@@ -64,10 +64,12 @@ public class WebViewActivity extends Activity {
 			actionBar.setDisplayShowHomeEnabled(false);
 			actionBar.setDisplayShowCustomEnabled(true);
 
-			LayoutInflater inflator = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater inflator = (LayoutInflater) this
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View v = inflator.inflate(layoutId, null);
 			@SuppressWarnings("deprecation")
-			ActionBar.LayoutParams layout = new ActionBar.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+			ActionBar.LayoutParams layout = new ActionBar.LayoutParams(LayoutParams.FILL_PARENT,
+					LayoutParams.FILL_PARENT);
 			actionBar.setCustomView(v, layout);
 		}
 	}
