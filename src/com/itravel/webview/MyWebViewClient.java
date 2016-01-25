@@ -35,13 +35,11 @@ public class MyWebViewClient extends WebViewClient {
 		myWebViewClient(activity, false, true, webView, jsInterface);
 	}
 
-	public MyWebViewClient(Activity activity, boolean currentActivity, WebView webView,
-			JsInterface jsInterface) {
+	public MyWebViewClient(Activity activity, boolean currentActivity, WebView webView, JsInterface jsInterface) {
 		myWebViewClient(activity, currentActivity, true, webView, jsInterface);
 	}
 
-	public MyWebViewClient(boolean ifDialog, Activity activity, WebView webView,
-			JsInterface jsInterface) {
+	public MyWebViewClient(boolean ifDialog, Activity activity, WebView webView, JsInterface jsInterface) {
 		myWebViewClient(activity, false, ifDialog, webView, jsInterface);
 	}
 
@@ -54,8 +52,7 @@ public class MyWebViewClient extends WebViewClient {
 	 */
 	@SuppressWarnings("deprecation")
 	@SuppressLint("SetJavaScriptEnabled")
-	private void myWebViewClient(Activity activity, boolean currentActivity, boolean ifDialog,
-			WebView webView, JsInterface jsInterface) {
+	private void myWebViewClient(Activity activity, boolean currentActivity, boolean ifDialog, WebView webView, JsInterface jsInterface) {
 		this.activity = activity;
 		this.currentActivity = currentActivity;
 		this.ifDialog = ifDialog;
@@ -162,6 +159,7 @@ public class MyWebViewClient extends WebViewClient {
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally {
+				System.out.println("shouldInterceptRequest>>>>>>>>>>>" + path);
 				if (response == null) {
 					System.out.println("拦截但是没有找到的文件：" + path);
 				}

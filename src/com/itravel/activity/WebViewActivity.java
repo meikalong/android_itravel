@@ -64,12 +64,10 @@ public class WebViewActivity extends Activity {
 			actionBar.setDisplayShowHomeEnabled(false);
 			actionBar.setDisplayShowCustomEnabled(true);
 
-			LayoutInflater inflator = (LayoutInflater) this
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater inflator = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			View v = inflator.inflate(layoutId, null);
 			@SuppressWarnings("deprecation")
-			ActionBar.LayoutParams layout = new ActionBar.LayoutParams(LayoutParams.FILL_PARENT,
-					LayoutParams.FILL_PARENT);
+			ActionBar.LayoutParams layout = new ActionBar.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 			actionBar.setCustomView(v, layout);
 		}
 	}
